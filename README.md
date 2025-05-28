@@ -1,48 +1,52 @@
-# Astro Starter Kit: Basics
+# 👨🏻‍💻 Porfolio
 
-```sh
-bun create astro@latest -- --template basics
+Porfolio profesional desarrollado con Astro y Tailwind CSS.
+
+## 🚀 Características
+
+- ✨ Diseño moderno y profesional
+- 🌙 Modo oscuro/claro automático
+- 📱 Completamente responsive
+- ⚡ Optimizado para rendimiento
+- 🎨 Animaciones sutiles
+- 🧩 Componentes reutilizables
+
+## 🛠️ Tecnologías
+
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 📦 Instalación
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/sebitabravo/porfolio.git
+cd portafolio-sebastian-bravo
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🧞 Comandos
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+| `bun install`             | Instala dependencias                            |
+| `bun dev`             | Inicia el servidor de desarrollo local en `localhost:4321`      |
+| `bun build`           | Construya su sitio de producción para `./dist/`          |
+| `bun preview`         | Obtenga una vista previa de su compilación localmente, antes de implementarla     |
+| `bun astro ...`       | Ejecute comandos CLI como `astro add`, `astro check` |
+| `bun astro -- --help` | Obtenga ayuda para utilizar la CLI de Astro                    |
 
-## 👀 Want to learn more?
+## Licencia de contenido
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📄 Licencia de contenido
+
+El código fuente de este Porfolio está disponible bajo la licencia [MIT](./LICENSE).
+
+Sin embargo, **todo el contenido original** (textos, imágenes, marca personal y nombre) está protegido y **no puede ser reutilizado sin autorización explícita**.
+
+## 👤 Autor
+
+**Sebastian Bravo**
+- 📧 Email: [sebitabravocontacto@gmail.com](mailto:sebitabravocontacto@gmail.com)

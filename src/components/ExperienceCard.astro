@@ -1,0 +1,106 @@
+---
+import ExternalLink from "./icons/ExternalLink.astro";
+
+export interface Props {
+  company: string;
+  position: string;
+  period: string;
+  description: string;
+  logo?: string;
+  current?: boolean;
+  companyUrl?: string;
+}
+
+const {
+  company,
+  position,
+  period,
+  description,
+  logo,
+  current = false,
+  companyUrl,
+} = Astro.props;
+---
+
+<div
+  class="group relative bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+>
+  <!-- Background gradient effect -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-transparent dark:from-primary-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+  >
+  </div>
+
+  <div class="relative flex items-start space-x-6">
+    {
+      logo && (
+        <div class="flex-shrink-0">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800">
+            <img
+              src={logo || "/placeholder.svg"}
+              alt={`Logo de ${company}`}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      )
+    }
+
+    <div class="flex-1">
+      <div class="flex items-center justify-between mb-3">
+        <h3
+          class="text-xl font-bold text-neutral-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300"
+        >
+          {position}
+        </h3>
+        {
+          current && (
+            <span class="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-accent-100 to-accent-200 dark:from-accent-900 dark:to-accent-800 text-accent-800 dark:text-accent-200 rounded-full border border-accent-300 dark:border-accent-700">
+              Actual
+            </span>
+          )
+        }
+      </div>
+
+      <p
+        class="text-primary-600 dark:text-primary-400 font-semibold mb-3 text-lg"
+      >
+        {company}
+      </p>
+
+      <div class="flex items-center space-x-2 mb-4">
+        <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+        <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+          {period}
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-4 mb-4">
+        <p class="text-neutral-800 dark:text-neutral-200 leading-relaxed">
+          {description}
+        </p>
+      </div>
+
+      {
+        companyUrl ? (
+          <a
+            href={companyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25"
+          >
+            <span>Saber más</span>
+            <ExternalLink class="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+        ) : (
+          <button
+            class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-neutral-400 to-neutral-500 text-white font-medium rounded-xl cursor-not-allowed opacity-50"
+            disabled
+          >
+            <span>Más información próximamente</span>
+          </button>
+        )
+      }
+    </div>
+  </div>
+</div>

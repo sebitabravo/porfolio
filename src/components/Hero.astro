@@ -1,0 +1,129 @@
+---
+import AnimatedButton from "./AnimatedButton.astro";
+import MailIcon from "./icons/Mail.astro";
+import LinkedInIcon from "./icons/Linkedin.astro";
+import GitHubIcon from "./icons/GitHub.astro";
+import Badge from "./Badge.astro";
+import Arrow from "./icons/Arrow.astro";
+---
+
+<section
+  class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral-900 via-primary-900 to-neutral-900 overflow-hidden"
+>
+  <!-- Background pattern -->
+  <div
+    class="absolute inset-0 opacity-40"
+    style='background-image: url(&apos;data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.08"%3E%3Ccircle cx="7" cy="7" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&apos;)'
+  >
+  </div>
+
+  <div class="relative container mx-auto px-6 lg:px-8 text-center z-10 py-20">
+    <div class="animate-fade-in space-y-10 max-w-4xl mx-auto">
+      <!-- Profile Image -->
+      <div class="relative inline-block">
+        <img
+          src="/ProfileImage.webp"
+          alt="Sebastian Bravo"
+          class="w-40 h-40 md:w-44 md:h-44 rounded-full mx-auto border-4 border-white/20 shadow-2xl object-cover ring-4 ring-primary-500/30 backdrop-blur-sm"
+        />
+        <div
+          class="absolute -bottom-2 -right-2 w-6 h-6 bg-accent-500 rounded-full border-2 border-white shadow-lg animate-pulse"
+        >
+        </div>
+      </div>
+
+      <!-- Main Title -->
+      <div class="space-y-6">
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 tracking-tight leading-tight"
+        >
+          <span
+            class="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text"
+          >
+            Sebastian Bravo
+          </span>
+        </h1>
+
+        <!-- Subtitle with better typography -->
+        <p
+          class="text-xl md:text-2xl lg:text-3xl text-neutral-200 dark:text-neutral-300 max-w-4xl mx-auto leading-relaxed font-light"
+        >
+          Estudiante de <span class="text-primary-400 font-medium"
+            >Ingeniería en Informática</span
+          > en Inacap, Chile 🇨🇱.
+          <br class="hidden md:block" />
+          Técnico en telecomunicaciones con distinción y apasionado por la programación.
+        </p>
+      </div>
+
+      <!-- Available badge with better styling -->
+      <div class="flex justify-center mb-10">
+        <a
+          href="https://www.linkedin.com/in/sebitabravo/"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center transition-all duration-300 hover:scale-105 group"
+        >
+          <Badge>
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"
+              ></span>
+              Disponible para trabajar
+            </span>
+          </Badge>
+        </a>
+      </div>
+
+      <!-- Social Links with improved styling -->
+      <div class="flex justify-center items-center space-x-10 mb-16">
+        <a
+          href="mailto:sebitabravocontacto@gmail.com"
+          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-primary-500/20 hover:border-primary-400/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/25"
+          aria-label="Enviar email"
+        >
+          <MailIcon class="w-6 h-6" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/sebitabravo/"
+          target="_blank"
+          rel="noopener"
+          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-secondary-500/20 hover:border-secondary-400/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary-500/25"
+          aria-label="Ver perfil de LinkedIn"
+        >
+          <LinkedInIcon class="w-6 h-6" />
+        </a>
+        <a
+          href="https://github.com/sebitabravo"
+          target="_blank"
+          rel="noopener"
+          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-neutral-500/20 hover:border-neutral-400/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-neutral-500/25"
+          aria-label="Ver perfil de GitHub"
+        >
+          <GitHubIcon class="w-6 h-6" />
+        </a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="pt-8">
+        <AnimatedButton href="#experiencia" variant="primary" size="lg">
+          <span class="flex items-center gap-2">
+            Ver mi experiencia
+            <Arrow
+              class="w-5 h-5 transition-transform group-hover:translate-x-1"
+            />
+          </span>
+        </AnimatedButton>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating elements for visual interest -->
+  <div
+    class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-pulse"
+  >
+  </div>
+  <div
+    class="absolute bottom-20 right-10 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse delay-1000"
+  >
+  </div>
+</section>

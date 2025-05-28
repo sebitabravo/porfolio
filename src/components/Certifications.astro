@@ -1,0 +1,441 @@
+---
+import Star from "./icons/Star.astro";
+import ExternalLink from "./icons/ExternalLink.astro";
+---
+
+<section
+  id="certificaciones"
+  class="py-24 bg-gradient-to-br from-secondary-50 via-white to-primary-50 dark:from-neutral-900 dark:via-secondary-900/10 dark:to-neutral-800"
+>
+  <div class="container mx-auto px-6 lg:px-8">
+    <h2
+      class="text-3xl md:text-4xl font-display font-bold text-center bg-gradient-to-r from-secondary-600 via-primary-600 to-secondary-800 dark:from-secondary-400 dark:via-primary-400 dark:to-secondary-300 bg-clip-text mb-16"
+    >
+      🏆 Licencias y certificaciones
+    </h2>
+
+    <div class="max-w-4xl mx-auto space-y-8">
+      <!-- Certificaciones visibles inicialmente -->
+      <div id="visible-certifications" class="space-y-8">
+        <!-- Git de noob a pro -->
+        <div
+          class="group relative bg-gradient-to-br from-white to-secondary-50/50 dark:from-neutral-800 dark:to-secondary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-secondary-300 dark:hover:border-secondary-600 hover:shadow-2xl hover:shadow-secondary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <!-- Background gradient effect -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-secondary-50/50 to-transparent dark:from-secondary-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          >
+          </div>
+
+          <div class="relative flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+              >
+                <span class="text-white font-bold text-xs">MM</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-secondary-600 dark:group-hover:text-secondary-400 transition-colors duration-300"
+              >
+                Git de noob a pro
+              </h3>
+              <p
+                class="text-secondary-600 dark:text-secondary-400 font-semibold mb-3 text-lg"
+              >
+                Mastermind
+              </p>
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                  Expedición: ene. 2025
+                </p>
+              </div>
+              <div
+                class="flex items-start space-x-3 text-neutral-700 dark:text-neutral-300 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-4 mb-4"
+              >
+                <Star class="w-5 h-5 text-secondary-500 mt-0.5 flex-shrink-0" />
+                <span class="text-sm leading-relaxed"
+                  >Git BASH, Control de versiones, GitHub y más</span
+                >
+              </div>
+              <div>
+                <a
+                  href="/certifications/Git de noob a pro.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  <span>Ver certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desarrollador Full Stack -->
+        <div
+          class="group relative bg-gradient-to-br from-white to-accent-50/50 dark:from-neutral-800 dark:to-accent-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-accent-300 dark:hover:border-accent-600 hover:shadow-2xl hover:shadow-accent-500/10 transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <!-- Background gradient effect -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-accent-50/50 to-transparent dark:from-accent-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          >
+          </div>
+
+          <div class="relative flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+              >
+                <span class="text-white font-bold text-xs">INACAP</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors duration-300"
+              >
+                Desarrollador Full Stack
+              </h3>
+              <p
+                class="text-accent-600 dark:text-accent-400 font-semibold mb-3 text-lg"
+              >
+                Universidad Tecnológica de Chile, INACAP
+              </p>
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                  Expedición: dic. 2024
+                </p>
+              </div>
+              <div
+                class="flex items-start space-x-3 text-neutral-700 dark:text-neutral-300 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-4 mb-4"
+              >
+                <Star class="w-5 h-5 text-accent-500 mt-0.5 flex-shrink-0" />
+                <span class="text-sm leading-relaxed"
+                  >CSS, Django, HTML, JavaScript, React, Node.js y más</span
+                >
+                >
+              </div>
+              <div>
+                <a
+                  href="/certifications/DESARROLLADOR FULL STACK.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  <span>Ver certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificaciones adicionales (ocultas inicialmente) -->
+      <div id="hidden-certifications" class="space-y-8 hidden">
+        <!-- Desarrollo de Aplicaciones Básicas -->
+        <div
+          class="group relative bg-gradient-to-br from-white to-primary-50/50 dark:from-neutral-800 dark:to-primary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <div class="relative flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+              >
+                <span class="text-white font-bold text-xs">INACAP</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+              >
+                Desarrollo de Aplicaciones Básicas
+              </h3>
+              <p
+                class="text-primary-600 dark:text-primary-400 font-semibold mb-3"
+              >
+                Universidad Tecnológica de Chile, INACAP
+              </p>
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                  Expedición: 2024
+                </p>
+              </div>
+              <div>
+                <a
+                  href="/certifications/DESARROLLO DE APLICACIONES BÁSICAS.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  <span>Ver certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diseño y Gestión de Base de Datos -->
+        <div
+          class="group relative bg-gradient-to-br from-white to-accent-50/50 dark:from-neutral-800 dark:to-accent-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-accent-300 dark:hover:border-accent-600 hover:shadow-2xl hover:shadow-accent-500/10 transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <div class="relative flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+              >
+                <span class="text-white font-bold text-xs">DB</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+              >
+                Diseño y Gestión de Base de Datos
+              </h3>
+              <p
+                class="text-accent-600 dark:text-accent-400 font-semibold mb-3"
+              >
+                Universidad Tecnológica de Chile, INACAP
+              </p>
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                  Expedición: 2024
+                </p>
+              </div>
+              <div>
+                <a
+                  href="/certifications/DISEÑO Y GESTIÓN DE BASE DE DATOS.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  <span>Ver certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diseño Ágil de Sistemas -->
+        <div
+          class="group relative bg-gradient-to-br from-white to-secondary-50/50 dark:from-neutral-800 dark:to-secondary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-secondary-300 dark:hover:border-secondary-600 hover:shadow-2xl hover:shadow-secondary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <div class="relative flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+              >
+                <span class="text-white font-bold text-xs">SYS</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+              >
+                Diseño Ágil de Sistemas
+              </h3>
+              <p
+                class="text-secondary-600 dark:text-secondary-400 font-semibold mb-3"
+              >
+                Universidad Tecnológica de Chile, INACAP
+              </p>
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                  Expedición: 2024
+                </p>
+              </div>
+              <div>
+                <a
+                  href="/certifications/DISEÑO ÁGIL DE SISTEMAS.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  <span>Ver certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soporte Computacional -->
+        <div
+          class="group relative bg-gradient-to-br from-white to-primary-50/50 dark:from-neutral-800 dark:to-primary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <div class="relative flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+              >
+                <span class="text-white font-bold text-xs">IT</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+              >
+                Soporte Computacional
+              </h3>
+              <p
+                class="text-primary-600 dark:text-primary-400 font-semibold mb-3"
+              >
+                Universidad Tecnológica de Chile, INACAP
+              </p>
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                  Expedición: 2024
+                </p>
+              </div>
+              <div>
+                <a
+                  href="/certifications/SOPORTE COMPUTACIONAL.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  <span>Ver certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instalación y Configuración de Windows -->
+        <div
+          class="group relative bg-gradient-to-br from-white to-accent-50/50 dark:from-neutral-800 dark:to-accent-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-accent-300 dark:hover:border-accent-600 hover:shadow-2xl hover:shadow-accent-500/10 transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <div class="relative flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+              >
+                <span class="text-white font-bold text-xs">WIN</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+              >
+                Instalación y Configuración de Windows
+              </h3>
+              <p
+                class="text-accent-600 dark:text-accent-400 font-semibold mb-3"
+              >
+                Universidad Tecnológica de Chile, INACAP
+              </p>
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                  Expedición: 2024
+                </p>
+              </div>
+              <div>
+                <a
+                  href="/certifications/Instalación y Configuración de Windows.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  <span>Ver certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <button
+          id="toggle-certifications-btn"
+          onclick="toggleCertifications()"
+          class="group inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 hover:from-primary-100 hover:to-secondary-100 dark:hover:from-primary-800/50 dark:hover:to-secondary-800/50 text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 rounded-2xl border border-neutral-200 dark:border-neutral-600 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        >
+          <span id="toggle-text" class="font-semibold">Mostrar todo (7)</span>
+          <svg
+            id="toggle-arrow"
+            class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Función para alternar la visibilidad de certificaciones
+  function toggleCertifications() {
+    const hiddenCerts = document.getElementById("hidden-certifications");
+    const toggleText = document.getElementById("toggle-text");
+    const toggleArrow = document.getElementById("toggle-arrow");
+
+    if (!hiddenCerts || !toggleText || !toggleArrow) return;
+
+    if (hiddenCerts.classList.contains("hidden")) {
+      // Mostrar certificaciones ocultas
+      hiddenCerts.classList.remove("hidden");
+      hiddenCerts.style.animation = "fadeInUp 0.5s ease-out";
+      toggleText.textContent = "Mostrar menos";
+      toggleArrow.style.transform = "rotate(180deg)";
+    } else {
+      // Ocultar certificaciones
+      hiddenCerts.style.animation = "fadeOutDown 0.5s ease-out";
+      setTimeout(() => {
+        if (hiddenCerts && toggleText && toggleArrow) {
+          hiddenCerts.classList.add("hidden");
+          toggleText.textContent = "Mostrar todo (7)";
+          toggleArrow.style.transform = "rotate(0deg)";
+        }
+      }, 500);
+    }
+  }
+
+  // Hacer función global
+  (window as any).toggleCertifications = toggleCertifications;
+</script>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeOutDown {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+</style>

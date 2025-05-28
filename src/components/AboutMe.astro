@@ -1,0 +1,144 @@
+---
+// AboutMe.astro - Componente de la sección "Sobre mí"
+import MailOutline from "./icons/MailOutline.astro";
+import Copy from "./icons/Copy.astro";
+---
+
+<section
+  id="sobre-mi"
+  class="relative py-24 bg-gradient-to-br from-neutral-50 to-primary-50/30 dark:from-neutral-900 dark:to-primary-950/20"
+>
+  <!-- Background decoration -->
+  <div
+    class="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))]"
+  >
+  </div>
+
+  <div class="relative container mx-auto px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 dark:from-primary-400 dark:via-primary-500 dark:to-primary-600 bg-clip-text mb-6"
+        >
+          🧑‍💻 Sobre mí
+        </h2>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"
+        >
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Image Section -->
+        <div class="order-2 lg:order-1">
+          <div class="relative group">
+            <div
+              class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur-2xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"
+            >
+            </div>
+            <div
+              class="relative bg-white dark:bg-neutral-800 p-2 rounded-2xl shadow-xl ring-1 ring-neutral-200 dark:ring-neutral-700"
+            >
+              <img
+                src="/ProfileImage.webp"
+                alt="Sebastian Bravo trabajando"
+                class="w-full rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="order-1 lg:order-2 space-y-8">
+          <div class="space-y-6">
+            <p
+              class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed"
+            >
+              Mi nombre es <span
+                class="font-semibold text-primary-600 dark:text-primary-400"
+                >Sebastian Bravo</span
+              >, pero mis amigos me llaman <span
+                class="font-semibold text-secondary-600 dark:text-secondary-400"
+                >Seba</span
+              >. Empecé mi interés por la programación a los 17 años y
+              actualmente estoy en mi
+              <span class="font-semibold text-neutral-900 dark:text-white"
+                >tercer año universitario</span
+              >.
+            </p>
+
+            <p
+              class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed"
+            >
+              Poseo un <span
+                class="font-semibold text-primary-600 dark:text-primary-400"
+                >título técnico en telecomunicaciones</span
+              > y actualmente estoy estudiando Ingeniería en Informática en el Instituto
+              Nacional de Capacitación Profesional de Chile (Inacap).
+            </p>
+
+            <p
+              class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed"
+            >
+              Durante mi formación técnica en telecomunicaciones, <span
+                class="font-semibold text-secondary-600 dark:text-secondary-400"
+                >logré el segundo lugar en mi curso</span
+              >. Me apasiona la programación y siempre estoy aprendiendo nuevas
+              habilidades. Estoy entusiasmado por enfrentar nuevos desafíos en
+              este campo.
+            </p>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="space-y-6 pt-4">
+            <h3
+              class="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-3"
+            >
+              <span
+                class="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"
+              >
+                <MailOutline class="w-4 h-4 text-white" />
+              </span>
+              Contacto
+            </h3>
+
+            <div
+              class="group relative bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg ring-1 ring-neutral-200 dark:ring-neutral-700 hover:shadow-xl transition-all duration-300"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"
+                  >
+                    <MailOutline class="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p
+                      class="text-sm font-medium text-neutral-600 dark:text-neutral-400"
+                    >
+                      Email
+                    </p>
+                    <p
+                      class="text-lg font-semibold text-neutral-900 dark:text-white"
+                    >
+                      sebitabravocontacto@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  class="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-primary-500 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95"
+                  onclick="navigator.clipboard.writeText('sebitabravocontacto@gmail.com')"
+                  title="Copiar email"
+                >
+                  <Copy class="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

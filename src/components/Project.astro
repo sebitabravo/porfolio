@@ -1,0 +1,47 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section
+  id="proyectos"
+  class="py-24 bg-gradient-to-br from-secondary-50/30 via-white to-accent-50/30 dark:from-neutral-900 dark:via-secondary-950/10 dark:to-neutral-800"
+>
+  <div class="container mx-auto px-6 lg:px-8">
+    <h2
+      class="text-4xl md:text-5xl font-display font-bold text-center bg-gradient-to-r from-secondary-600 via-accent-600 to-secondary-800 dark:from-secondary-400 dark:via-accent-400 dark:to-secondary-300 bg-clip-text mb-16"
+    >
+      🚀 Proyectos
+    </h2>
+  </div>
+
+  <div
+    class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6 lg:px-8"
+  >
+    <ProjectCard
+      title="Crm Workers"
+      description="Proyecto fullstack para la administración de trabajadores de una empresa. Sistema completo de gestión con interfaz moderna y funcionalidades avanzadas."
+      image="/projects/crm.webp"
+      technologies={["React", "Tailwind CSS", "Node.js", "MySQL"]}
+      demoUrl="#"
+      githubUrl="#"
+    />
+
+    <ProjectCard
+      title="EcoAnalyzer"
+      description="Pequeño proyecto con la librería de tkinter para la administración de recursos de una empresa. Aplicación de escritorio para análisis y gestión ambiental."
+      image="/projects/ecoanalyzer.webp"
+      technologies={["Python", "SQLite"]}
+      demoUrl="#"
+      githubUrl="#"
+    />
+
+    <!--<ProjectCard
+      title="Sistema de Telecomunicaciones"
+      description="Proyecto académico para configuración y monitoreo de redes. Implementación de soluciones de conectividad empresarial."
+      image="/projects/crm.webp"
+      technologies={["Python", "Networking", "Cisco"]}
+      demoUrl="#"
+      githubUrl="#"
+    />-->
+  </div>
+</section>
