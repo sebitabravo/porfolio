@@ -1,0 +1,146 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import AnimatedButton from "../../components/AnimatedButton.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+if (!post) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await render(post);
+
+// Format date for display
+function formatDate(dateString: Date | string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<Layout title={`${post.data.title} - Blog - Sebastian Bravo`}>
+  <main
+    class="relative min-h-screen bg-gradient-to-br from-neutral-900 via-primary-900 to-neutral-900"
+  >
+    <!-- Background pattern -->
+    <div
+      class="absolute inset-0 opacity-40"
+      style='background-image: url(&apos;data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.08"%3E%3Ccircle cx="7" cy="7" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&apos;)'
+    >
+    </div>
+
+    <SectionContainer class="relative z-10 py-32">
+      <article class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="mb-12">
+          <div class="mb-8">
+            <AnimatedButton href="/blog" variant="outline" size="sm">
+              ← Volver al blog
+            </AnimatedButton>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 mb-8"
+          >
+            <div class="flex items-center gap-4 text-sm text-neutral-400 mb-6">
+              <time
+                datetime={post.data.publishDate.toISOString()}
+                class="flex items-center gap-2"
+              >
+                <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                {formatDate(post.data.publishDate)}
+              </time>
+              {
+                post.data.author && (
+                  <>
+                    <span class="text-neutral-600">•</span>
+                    <span>{post.data.author}</span>
+                  </>
+                )
+              }
+            </div>
+
+            <h1
+              class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent mb-6"
+            >
+              {post.data.title}
+            </h1>
+
+            <p class="text-xl text-neutral-300 leading-relaxed mb-8">
+              {post.data.description}
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              {
+                (post.data.tags || []).map((tag: string) => (
+                  <span class="px-3 py-1 text-sm font-medium bg-accent-500/20 text-accent-300 rounded-full border border-accent-500/30">
+                    #{tag}
+                  </span>
+                ))
+              }
+            </div>
+          </div>
+        </header>
+
+        <!-- Content -->
+        <div
+          class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 mb-8"
+        >
+          <div
+            class="text-neutral-200 leading-relaxed space-y-6
+                      [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:bg-gradient-to-r [&>h1]:from-white [&>h1]:to-primary-200 [&>h1]:bg-clip-text [&>h1]:text-transparent [&>h1]:mb-6 [&>h1]:mt-8
+                      [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:text-white [&>h2]:mb-4 [&>h2]:mt-6
+                      [&>h3]:text-xl [&>h3]:font-medium [&>h3]:text-white [&>h3]:mb-3 [&>h3]:mt-5
+                      [&>p]:text-neutral-300 [&>p]:mb-4 [&>p]:leading-relaxed
+                      [&>ul]:list-disc [&>ul]:list-inside [&>ul]:space-y-2 [&>ul]:text-neutral-300 [&>ul]:mb-4
+                      [&>ol]:list-decimal [&>ol]:list-inside [&>ol]:space-y-2 [&>ol]:text-neutral-300 [&>ol]:mb-4
+                      [&>a]:text-accent-400 [&>a]:hover:text-accent-300 [&>a]:underline [&>a]:transition-colors
+                      [&>strong]:font-semibold [&>strong]:text-white
+                      [&>em]:italic
+                      [&>code]:bg-neutral-800/50 [&>code]:px-2 [&>code]:py-1 [&>code]:rounded [&>code]:text-sm [&>code]:font-mono [&>code]:text-accent-300 [&>code]:border [&>code]:border-neutral-700
+                      [&>pre]:bg-neutral-900/80 [&>pre]:text-neutral-100 [&>pre]:p-4 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:mb-4 [&>pre]:border [&>pre]:border-neutral-700
+                      [&>blockquote]:border-l-4 [&>blockquote]:border-accent-500 [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:text-neutral-400 [&>blockquote]:mb-4 [&>blockquote]:bg-neutral-800/30 [&>blockquote]:py-2
+                      [&>hr]:border-neutral-700 [&>hr]:my-8"
+          >
+            <Content />
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer
+          class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8"
+        >
+          <div
+            class="flex flex-col sm:flex-row items-center justify-between gap-4"
+          >
+            <div class="text-neutral-400">
+              <p>¿Te gustó este artículo? ¡Compártelo!</p>
+            </div>
+
+            <div class="flex gap-3">
+              <AnimatedButton href="/blog" variant="outline" size="sm">
+                ← Más artículos
+              </AnimatedButton>
+              <AnimatedButton href="/#contacto" variant="primary" size="sm">
+                Contactar
+              </AnimatedButton>
+            </div>
+          </div>
+        </footer>
+      </article>
+    </SectionContainer>
+  </main>
+</Layout>

@@ -84,5 +84,23 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.glass-card': {
+          '@apply bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10': {},
+        },
+        '.gradient-text': {
+          '@apply bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent': {},
+        },
+        '.card-hover': {
+          '@apply hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary-500/20': {},
+        },
+        '.tech-card': {
+          '@apply bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-700 hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2': {},
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 }
