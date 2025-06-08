@@ -1,38 +1,75 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import ShortenForm from "../components/ShortenForm.astro";
 import ResultsDisplay from "../components/ResultsDisplay.astro";
 import LinksList from "../components/LinksList.astro";
 import ShortenerScript from "../components/ShortenerScript.astro";
+import Arrow from "../components/icons/Arrow.astro";
 ---
 
 <Layout title="Acortador de Links - Sebastián Bravo">
-  <main class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Acortador de Links
-        </h1>
-        <div
-          class="flex justify-center items-center space-x-2 text-sm text-gray-500 dark:text-gray-400"
-        >
-          <span>Ejemplo:</span>
-          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
-            >tudominio.com/youtube</code
-          >
-        </div>
-      </div>
-
-      <!-- Formulario para crear link corto -->
-      <ShortenForm />
-
-      <!-- Resultados y feedback -->
-      <ResultsDisplay />
-
-      <!-- Lista de links creados -->
-      <LinksList />
+  <main
+    class="relative min-h-screen bg-gradient-to-br from-neutral-900 via-primary-900 to-neutral-900 overflow-hidden"
+  >
+    <!-- Background pattern -->
+    <div
+      class="absolute inset-0 opacity-30"
+      style='background-image: url(&apos;data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.08"%3E%3Ccircle cx="7" cy="7" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&apos;)'
+    >
     </div>
+
+    <!-- Hero Section -->
+    <section class="relative py-24 text-center">
+      <SectionContainer>
+        <div class="animate-fade-in space-y-8 max-w-4xl mx-auto">
+          <!-- Header -->
+          <div class="space-y-6">
+            <h1
+              class="text-4xl md:text-6xl font-display font-bold bg-gradient-to-r from-white via-primary-200 to-secondary-300 bg-clip-text text-transparent"
+            >
+              🔗 Acortador de Links
+            </h1>
+            <p
+              class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed"
+            >
+              Crea enlaces cortos y personalizados para compartir fácilmente tus
+              URLs favoritas
+            </p>
+
+            <!-- Example Display -->
+            <div
+              class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-3 border border-white/20"
+            >
+              <span class="text-neutral-300 text-sm">Ejemplo:</span>
+              <code
+                class="bg-gradient-to-r from-secondary-500/20 to-accent-500/20 backdrop-blur-sm px-4 py-2 rounded-xl text-accent-300 font-mono text-sm border border-accent-500/30"
+              >
+                tudominio.com/youtube
+              </code>
+            </div>
+          </div>
+        </div>
+      </SectionContainer>
+    </section>
+
+    <!-- Main Content Section -->
+    <section
+      class="relative py-12 bg-gradient-to-br from-neutral-50/5 to-primary-50/5"
+    >
+      <SectionContainer>
+        <div class="max-w-4xl mx-auto space-y-12">
+          <!-- Formulario para crear link corto -->
+          <ShortenForm />
+
+          <!-- Resultados y feedback -->
+          <ResultsDisplay />
+
+          <!-- Lista de links creados -->
+          <LinksList />
+        </div>
+      </SectionContainer>
+    </section>
   </main>
 </Layout>
 
