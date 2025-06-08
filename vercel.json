@@ -4,10 +4,7 @@
     "framework": "astro",
     "functions": {
         "src/pages/api/*.ts": {
-            "runtime": "edge"
-        },
-        "src/pages/[path].ts": {
-            "runtime": "edge"
+            "runtime": "nodejs20.x"
         }
     },
     "headers": [
@@ -29,6 +26,23 @@
                 {
                     "key": "X-DNS-Prefetch-Control",
                     "value": "on"
+                },
+                {
+                    "key": "Strict-Transport-Security",
+                    "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                }
+            ]
+        },
+        {
+            "source": "/api/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "no-store, no-cache, must-revalidate"
                 }
             ]
         },
@@ -46,7 +60,7 @@
             ]
         },
         {
-            "source": "/(.*\\.(js|css|woff2?|png|jpe?g|svg|webp|ico))",
+            "source": "/(.*)\\.(?:js|css|woff2?|png|jpe?g|svg|webp|ico)$",
             "headers": [
                 {
                     "key": "Cache-Control",
@@ -55,19 +69,13 @@
             ]
         },
         {
-            "source": "/(.*\\.html)",
+            "source": "/(.*)\\.html$",
             "headers": [
                 {
                     "key": "Cache-Control",
                     "value": "public, max-age=3600, must-revalidate"
                 }
             ]
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/api/:path*",
-            "destination": "/api/:path*"
         }
     ]
 }
