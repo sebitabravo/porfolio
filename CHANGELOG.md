@@ -114,24 +114,16 @@ y este proyecto adhiere al [Versionado Semántico](https://semver.org/spec/v2.0.
 
 ## 📋 Próximas Mejoras (Roadmap)
 
-### Versión 1.0.0 (Planificada)
-- [ ] Integración con API de GitHub para mostrar repositorios dinámicamente
-- [ ] Blog personal con posts sobre tecnología
-- [ ] Formulario de contacto funcional
-- [ ] Implentacion de dominio personalizado
-- [ ] Implementacion de cortador de URL para enlaces
-- [ ] Cambio de correo electrónico a uno profesional @sebitabravo.com
-
 ### Versión 1.1.0 (Futura)
 - [ ] Versión en inglés (i18n)
-- [ ] API personalizada para proyectos
-- [ ] Sistema de autenticación
+- [x] API personalizada para proyectos
+- [x] Sistema de autenticación
 - [ ] Mejora de accesibilidad (WCAG 2.1)
 - [ ] Mejorar la pagina de componentes con ejemplos interactivos
 
 ---
 
 **Autor**: Sebastian Bravo
-**Fecha de lanzamiento**: 27 de Mayo, 2025
-**Versión actual**: 0.0.1
+**Fecha de lanzamiento**: 08 de Junio, 2025
+**Versión actual**: 1.0.0
 **Estado**: ✅ Listo para producción
