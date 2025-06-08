@@ -5,7 +5,6 @@ Porfolio profesional desarrollado con Astro y Tailwind CSS.
 ## 🚀 Características
 
 - ✨ Diseño moderno y profesional
-- 🌙 Modo oscuro/claro automático
 - 📱 Completamente responsive
 - ⚡ Optimizado para rendimiento
 - 🎨 Animaciones sutiles
@@ -17,12 +16,21 @@ Porfolio profesional desarrollado con Astro y Tailwind CSS.
 - [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
+### 🔗 Acortador de Links
+- **Rutas Personalizadas**: Crea links con rutas memorables
+- **Acortamiento Automático**: Genera códigos aleatorios cuando no se especifica ruta
+- **Panel de Administración**: Vista detallada con estadísticas y gestión avanzada
+- **Estadísticas en Tiempo Real**: Seguimiento de clicks y métricas de uso
+- **Interfaz Moderna**: Diseño responsive con modo oscuro/claro
+- **Gestión de Datos**: Exportación e importación de datos para backup
+- **Validación Avanzada**: Protección contra rutas reservadas y caracteres inválidos
+
 ## 📦 Instalación
 
 1. Clona el repositorio:
 ```bash
 git clone https://github.com/sebitabravo/porfolio.git
-cd portafolio-sebastian-bravo
+cd porfolio
 ```
 
 ## 🧞 Comandos

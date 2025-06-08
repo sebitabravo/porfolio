@@ -60,7 +60,7 @@
             ]
         },
         {
-            "source": "/(.*)\\.(?:js|css|woff2?|png|jpe?g|svg|webp|ico)$",
+            "source": "/:path*.:ext(js|css|woff2|woff|png|jpg|jpeg|svg|webp|ico)",
             "headers": [
                 {
                     "key": "Cache-Control",
@@ -69,7 +69,7 @@
             ]
         },
         {
-            "source": "/(.*)\\.html$",
+            "source": "/:path*.html",
             "headers": [
                 {
                     "key": "Cache-Control",
