@@ -1,0 +1,15 @@
+{
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "build:analyze": "astro build && npx vite-bundle-analyzer dist/client/_astro/*.js",
+        "preview": "astro preview",
+        "astro": "astro",
+        "clean": "rm -rf dist .vercel node_modules/.cache",
+        "check": "astro check",
+        "type-check": "astro check --watch"
+    },
+    "devDependencies": {
+        "vite-bundle-analyzer": "^0.10.6"
+    }
+}

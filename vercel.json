@@ -1,0 +1,73 @@
+{
+    "buildCommand": "bun run build",
+    "installCommand": "bun install",
+    "framework": "astro",
+    "functions": {
+        "src/pages/api/*.ts": {
+            "runtime": "edge"
+        },
+        "src/pages/[path].ts": {
+            "runtime": "edge"
+        }
+    },
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                },
+                {
+                    "key": "X-DNS-Prefetch-Control",
+                    "value": "on"
+                }
+            ]
+        },
+        {
+            "source": "/(_astro|static)/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                },
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.(js|css|woff2?|png|jpe?g|svg|webp|ico))",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.html)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=3600, must-revalidate"
+                }
+            ]
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/api/:path*",
+            "destination": "/api/:path*"
+        }
+    ]
+}

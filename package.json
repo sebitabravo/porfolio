@@ -5,12 +5,22 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:analyze": "astro build && echo 'Build analysis complete - check .vercel/output for optimization details'",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rm -rf dist .vercel node_modules/.cache",
+    "check": "astro check",
+    "type-check": "astro check --watch",
+    "build:production": "bun run clean && bun run check && bun run build",
+    "test:build": "bun run build && bun run preview",
+    "install:clean": "rm -rf node_modules bun.lockb && bun install"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/vercel": "^8.1.5",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.8.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.8.3"
   }
 }
