@@ -1,5 +1,6 @@
 ---
 import ExperienceCard from "./ExperienceCard.astro";
+import { CONFIG } from "../utils/config.js";
 ---
 
 <section
@@ -20,7 +21,7 @@ import ExperienceCard from "./ExperienceCard.astro";
         period="Actualmente"
         description="Estudiante de Ingeniería en Informática en Inacap, con conocimientos en desarrollo web, programación orientada a objetos y desarrollo back-end. Enfocado en aprender nuevas tecnologías y aplicar conocimientos en proyectos prácticos."
         current={true}
-        companyUrl="https://www.inacap.cl/"
+        companyUrl={CONFIG.INACAP_URL}
       />-->
 
     <ExperienceCard
@@ -28,7 +29,21 @@ import ExperienceCard from "./ExperienceCard.astro";
       position="Técnico en Telecomunicaciones"
       period="Diciembre 2022"
       description="Responsable de la instalación y funcionamiento de los servicios de conectividad y redes. Experiencia en configuración de equipos de telecomunicaciones y soporte técnico especializado."
-      companyUrl="https://www.telsur.cl/"
+      companyUrl={CONFIG.TELSUR_URL}
     />
   </div>
 </section>
+description="Estudiante de Ingeniería en Informática en Inacap, con conocimientos
+en desarrollo web, programación orientada a objetos y desarrollo back-end. Enfocado
+en aprender nuevas tecnologías y aplicar conocimientos en proyectos prácticos." current={
+  true
+}
+companyUrl="https://www.inacap.cl/" />-->
+
+<ExperienceCard
+  company="Telsur"
+  position="Técnico en Telecomunicaciones"
+  period="Diciembre 2022"
+  description="Responsable de la instalación y funcionamiento de los servicios de conectividad y redes. Experiencia en configuración de equipos de telecomunicaciones y soporte técnico especializado."
+  companyUrl="https://www.telsur.cl/"
+/>
