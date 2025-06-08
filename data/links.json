@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1749359140811-d0ZebR",
+    "originalUrl": "https://www.youtube.com/@sebitabravo",
+    "shortCode": "d0ZebR",
+    "customPath": "youtube",
+    "createdAt": "2025-06-08T05:05:40.811Z"
+  },
+  {
+    "id": "1749359850123-WZKDYY",
+    "originalUrl": "https://app.warp.dev/referral/WZKDYY",
+    "shortCode": "WZKDYY",
+    "customPath": "warp",
+    "createdAt": "2025-06-08T05:17:30.123Z"
+  },
+  {
+    "id": "1749360120456-SQL789",
+    "originalUrl": "https://learnsql.com/blog/sql-basics-cheat-sheet/sql-basics-cheat-sheet-a3.pdf",
+    "shortCode": "SQL789",
+    "customPath": "sqlpdf",
+    "createdAt": "2025-06-08T05:22:00.456Z"
+  },
+  {
+    "id": "1749360380789-GDR123",
+    "originalUrl": "https://drive.google.com/file/d/1sGn1aiE6gvGdakA52jjtXmN7TfogYrTB/view",
+    "shortCode": "GDR123",
+    "customPath": "sql-pdf",
+    "createdAt": "2025-06-08T05:26:20.789Z"
+  },
+  {
+    "id": "1749360640987-APT456",
+    "originalUrl": "https://losapuntesdemajo.vercel.app",
+    "shortCode": "APT456",
+    "customPath": "majo",
+    "createdAt": "2025-06-08T05:30:40.987Z"
+  },
+  {
+    "id": "1749360900123-PYT789",
+    "originalUrl": "https://softlibre.unizar.es/manuales/aplicaciones/python/aprendepython_2023.pdf",
+    "shortCode": "PYT789",
+    "customPath": "libro-python",
+    "createdAt": "2025-06-08T05:35:00.123Z"
+  },
+  {
+    "id": "1749361160456-IGM123",
+    "originalUrl": "https://www.instagram.com/sebitabravo/",
+    "shortCode": "IGM123",
+    "customPath": "instagram",
+    "createdAt": "2025-06-08T05:39:20.456Z"
+  },
+  {
+    "id": "1749361420789-RRK456",
+    "originalUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "shortCode": "RRK456",
+    "customPath": "descargar-pdf",
+    "createdAt": "2025-06-08T05:43:40.789Z"
+  },
+  {
+    "id": "1749361680123-API789",
+    "originalUrl": "https://github.com/public-apis/public-apis?tab=MIT-1-ov-file",
+    "shortCode": "API789",
+    "customPath": "public-apis",
+    "createdAt": "2025-06-08T05:48:00.123Z"
+  }
+]
