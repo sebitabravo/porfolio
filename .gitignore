@@ -20,9 +20,6 @@ pnpm-debug.log*
 .env.production
 .env.local
 
-# shortcut links data
-data/
-
 # macOS-specific files
 .DS_Store
 Thumbs.db
