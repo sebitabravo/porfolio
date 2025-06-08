@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ShortenForm from "../components/ShortenForm.astro";
+import ResultsDisplay from "../components/ResultsDisplay.astro";
+import LinksList from "../components/LinksList.astro";
+import ShortenerScript from "../components/ShortenerScript.astro";
+---
+
+<Layout title="Acortador de Links - Sebastián Bravo">
+  <main class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Acortador de Links
+        </h1>
+        <div
+          class="flex justify-center items-center space-x-2 text-sm text-gray-500 dark:text-gray-400"
+        >
+          <span>Ejemplo:</span>
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+            >tudominio.com/youtube</code
+          >
+        </div>
+      </div>
+
+      <!-- Formulario para crear link corto -->
+      <ShortenForm />
+
+      <!-- Resultados y feedback -->
+      <ResultsDisplay />
+
+      <!-- Lista de links creados -->
+      <LinksList />
+    </div>
+  </main>
+</Layout>
+
+<!-- JavaScript Logic -->
+<ShortenerScript />

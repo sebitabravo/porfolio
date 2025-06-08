@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import Layout from "../layouts/Layout.astro";
 import AnimatedButton from "../components/AnimatedButton.astro";
 import SectionContainer from "../components/SectionContainer.astro";
@@ -15,11 +17,14 @@ import SectionContainer from "../components/SectionContainer.astro";
     <h2 class="text-2xl font-semibold">Página no encontrada</h2>
 
     <p class="text-gray-600 dark:text-gray-400 max-w-md">
-      Lo sentimos, la página que estás buscando no existe o ha sido movida.
+      Lo sentimos, la página o enlace corto que estás buscando no existe o ha
+      sido movido.
     </p>
 
-    <AnimatedButton href="/" variant="primary" size="md">
-      Volver al inicio
-    </AnimatedButton>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <AnimatedButton href="/" variant="primary" size="md">
+        Ir a Inicio
+      </AnimatedButton>
+    </div>
   </SectionContainer>
 </Layout>
