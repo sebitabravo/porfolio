@@ -21,7 +21,7 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
   }
 
   // Generar ID único para el request para tracking
-  const requestId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  const requestId = `${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
   vercelOptimizer.startExecutionTimer(requestId);
 
   // Validar request para Vercel limits

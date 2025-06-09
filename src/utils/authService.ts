@@ -9,7 +9,6 @@ export interface AuthResponse {
 
 // Almacenamiento en memoria para rate limiting (simple implementación)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
-const globalRateLimitStore = new Map<string, { count: number; resetTime: number }>();
 
 export function getClientIP(request: Request): string {
   const forwarded = request.headers.get('x-forwarded-for');

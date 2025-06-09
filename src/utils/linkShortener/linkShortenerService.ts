@@ -1,5 +1,5 @@
 import type { ShortenedLink, CreateLinkRequest, CreateLinkResponse } from './types.js';
-import { loadLinks, addLink, findLinkByCustomPath, findLinkByShortCode } from './dataAccess.js';
+import { loadLinks, addLink, findLinkByCustomPath } from './dataAccess.js';
 import { generateUniqueShortCode } from './shortCodeGenerator.js';
 import { isValidUrl, isValidCustomPath, sanitizeUrl } from './urlValidator.js';
 import { CONFIG } from '../config.js';

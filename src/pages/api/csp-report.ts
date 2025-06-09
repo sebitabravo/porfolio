@@ -36,7 +36,7 @@ function isCSPReportRateLimited(ip: string): boolean {
 }
 
 export const POST: APIRoute = async ({ request }) => {
-  const requestId = `csp-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  const requestId = `csp-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
   vercelOptimizer.startExecutionTimer(requestId);
 
   try {

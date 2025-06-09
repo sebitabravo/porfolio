@@ -6,7 +6,7 @@ import { createErrorResponse, createSuccessResponse } from '../../utils/response
 
 export const GET: APIRoute = async () => {
   try {
-    const links = await loadLinks();
+    const links = loadLinks();
 
     const totalLinks = links.length;
 

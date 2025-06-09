@@ -2,7 +2,7 @@ import { loadLinks, saveLinks, type ShortenedLink } from './linkShortener.js';
 
 // Limpiar links viejos (más de X días)
 export async function cleanOldLinks(daysOld: number = 30): Promise<number> {
-  const links = await loadLinks();
+  const links = loadLinks();
   const cutoffDate = new Date();
   cutoffDate.setDate(cutoffDate.getDate() - daysOld);
 
@@ -14,7 +14,7 @@ export async function cleanOldLinks(daysOld: number = 30): Promise<number> {
   const removedCount = links.length - activeLinks.length;
 
   if (removedCount > 0) {
-    await saveLinks(activeLinks);
+    saveLinks(activeLinks);
   }
 
   return removedCount;
@@ -22,7 +22,7 @@ export async function cleanOldLinks(daysOld: number = 30): Promise<number> {
 
 // Obtener links más recientes
 export async function getTopLinks(limit: number = 10): Promise<ShortenedLink[]> {
-  const links = await loadLinks();
+  const links = loadLinks();
   return links
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
     .slice(0, limit);
@@ -30,7 +30,7 @@ export async function getTopLinks(limit: number = 10): Promise<ShortenedLink[]> 
 
 // Obtener estadísticas detalladas
 export async function getDetailedStats() {
-  const links = await loadLinks();
+  const links = loadLinks();
 
   const totalLinks = links.length;
 
@@ -60,7 +60,7 @@ export async function getDetailedStats() {
 
 // Exportar datos para backup
 export async function exportData(): Promise<string> {
-  const links = await loadLinks();
+  const links = loadLinks();
   const stats = await getDetailedStats();
 
   return JSON.stringify({
@@ -75,7 +75,7 @@ export async function importData(jsonData: string): Promise<boolean> {
   try {
     const data = JSON.parse(jsonData);
     if (data.links && Array.isArray(data.links)) {
-      await saveLinks(data.links);
+      saveLinks(data.links);
       return true;
     }
     return false;
