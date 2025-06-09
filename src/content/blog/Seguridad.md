@@ -52,7 +52,7 @@ Como principiante en temas de seguridad web, inicialmente me enfoqué en los pri
 
 Una de las estrategias más efectivas que aprendí fue el **Attack Challenge Mode** del firewall de Cloudflare:
 
-![Configuración del Attack Challenge Mode](/blog/seguridad/enable-attack-challenge-mode.png)
+![Configuración del Attack Challenge Mode](/blog/seguridad/enable-attack-challenge-mode.webp)
 
 #### ¿Cómo funciona?
 - Cada visitante debe completar un *challenge* de verificación humana.
@@ -70,7 +70,7 @@ El segundo nivel de protección involucra **reglas personalizadas** para bloquea
 
 **Limitación importante**: Los atacantes pueden falsificar User-Agents fácilmente, pero esta medida añade una capa básica de protección.
 
-![Nueva ruta configurada en Vercel](/blog/seguridad/vercel-new-route.png)
+![Nueva ruta configurada en Vercel](/blog/seguridad/vercel-new-route.webp)
 
 ## 🌐 Configuración del dominio: De novato a profesional
 
@@ -119,7 +119,7 @@ El proceso de conexión del dominio con Vercel fue más directo de lo esperado:
 2. **Configuración de dominios**: `Settings → Domains`.
 3. **Añadir dominio personalizado**: Introduje `sebita.dev`.
 
-![Configuración de dominio en Vercel](/blog/seguridad/vercel-domain-config.png)
+![Configuración de dominio en Vercel](/blog/seguridad/vercel-domain-config.webp)
 
 ### Configuración de subdominios
 

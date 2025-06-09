@@ -14,11 +14,11 @@ const { title, description, image, technologies, demoUrl, githubUrl } =
 ---
 
 <div
-  class="group relative bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-secondary-500/10 transition-all duration-500 overflow-hidden border border-neutral-200 dark:border-neutral-700 hover:border-secondary-300 dark:hover:border-secondary-600 transform hover:-translate-y-2"
+  class="group relative bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl shadow-lg hover:shadow-2xl border border-neutral-200 dark:border-neutral-700 hover:border-secondary-300 dark:hover:border-secondary-600 transition-shadow duration-500 overflow-hidden"
 >
   <!-- Background gradient effect -->
   <div
-    class="absolute inset-0 bg-gradient-to-br from-secondary-50/50 to-transparent dark:from-secondary-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+    class="absolute inset-0 bg-gradient-to-br from-secondary-50/50 to-transparent dark:from-secondary-900/20 rounded-2xl"
   >
   </div>
 
@@ -26,14 +26,14 @@ const { title, description, image, technologies, demoUrl, githubUrl } =
     <img
       src={image || "/placeholder.svg"}
       alt={`Preview de ${title}`}
-      class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+      width="400"
+      height="192"
+      class="w-full h-48 object-cover"
     />
     <div
-      class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
     >
-      <div
-        class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
-      >
+      <div class="absolute bottom-4 left-4 right-4">
         <div class="flex space-x-2">
           {
             demoUrl && (
@@ -41,7 +41,7 @@ const { title, description, image, technologies, demoUrl, githubUrl } =
                 href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center space-x-2 px-4 py-2 bg-white/90 backdrop-blur-sm hover:bg-white text-neutral-900 text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105"
+                class="inline-flex items-center space-x-2 px-4 py-2 bg-white/90 backdrop-blur-sm hover:bg-white text-neutral-900 text-sm font-medium rounded-xl transition-colors duration-300"
               >
                 <Eye class="w-4 h-4" />
                 <span>Demo</span>
@@ -54,7 +54,7 @@ const { title, description, image, technologies, demoUrl, githubUrl } =
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center space-x-2 px-4 py-2 bg-neutral-900/90 backdrop-blur-sm hover:bg-neutral-900 text-white text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105"
+                class="inline-flex items-center space-x-2 px-4 py-2 bg-neutral-900/90 backdrop-blur-sm hover:bg-neutral-900 text-white text-sm font-medium rounded-xl transition-colors duration-300"
               >
                 <GitHub class="w-4 h-4" />
                 <span>Código</span>
@@ -80,7 +80,7 @@ const { title, description, image, technologies, demoUrl, githubUrl } =
     <div class="flex flex-wrap gap-2">
       {
         technologies.map((tech) => (
-          <span class="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 text-emerald-800 dark:text-emerald-200 rounded-full border border-emerald-200 dark:border-emerald-700/50 hover:scale-105 transition-transform duration-200">
+          <span class="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 text-emerald-800 dark:text-emerald-200 rounded-full border border-emerald-200 dark:border-emerald-700/50 transition-colors duration-200">
             {tech}
           </span>
         ))

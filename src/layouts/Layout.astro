@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import "../styles/global.css";
 
 export interface Props {
@@ -52,5 +53,6 @@ const {
       <slot />
     </main>
     <Footer />
+    <SpeedInsights />
   </body>
 </html>

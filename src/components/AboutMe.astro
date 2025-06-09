@@ -34,7 +34,7 @@ import Copy from "./icons/Copy.astro";
         <div class="order-2 lg:order-1">
           <div class="relative group">
             <div
-              class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur-2xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"
+              class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur-2xl"
             >
             </div>
             <div
@@ -43,7 +43,9 @@ import Copy from "./icons/Copy.astro";
               <img
                 src="/ProfileImage.webp"
                 alt="Sebastian Bravo trabajando"
-                class="w-full rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
+                width="400"
+                height="400"
+                class="w-full rounded-xl shadow-lg"
               />
             </div>
           </div>
@@ -104,7 +106,7 @@ import Copy from "./icons/Copy.astro";
             </h3>
 
             <div
-              class="group relative bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg ring-1 ring-neutral-200 dark:ring-neutral-700 hover:shadow-xl transition-all duration-300"
+              class="group relative bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg ring-1 ring-neutral-200 dark:ring-neutral-700 hover:shadow-xl transition-shadow duration-300"
             >
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-4">
@@ -128,7 +130,7 @@ import Copy from "./icons/Copy.astro";
                 </div>
 
                 <button
-                  class="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-primary-500 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95"
+                  class="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-primary-500 hover:text-white transition-colors duration-300"
                   onclick="navigator.clipboard.writeText('sebitabravocontacto@gmail.com')"
                   title="Copiar email"
                 >

@@ -12,7 +12,7 @@ import Arrow from "./icons/Arrow.astro";
 >
   <!-- Background pattern -->
   <div
-    class="absolute inset-0 opacity-40"
+    class="absolute inset-0"
     style='background-image: url(&apos;data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.08"%3E%3Ccircle cx="7" cy="7" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&apos;)'
   >
   </div>
@@ -24,10 +24,12 @@ import Arrow from "./icons/Arrow.astro";
         <img
           src="/ProfileImage.webp"
           alt="Sebastian Bravo"
+          width="176"
+          height="176"
           class="w-40 h-40 md:w-44 md:h-44 rounded-full mx-auto border-4 border-white/20 shadow-2xl object-cover ring-4 ring-primary-500/30 backdrop-blur-sm"
         />
         <div
-          class="absolute -bottom-2 -right-2 w-6 h-6 bg-accent-500 rounded-full border-2 border-white shadow-lg animate-pulse"
+          class="absolute -bottom-2 -right-2 w-6 h-6 bg-accent-500 rounded-full border-2 border-white shadow-lg"
         >
         </div>
       </div>
@@ -62,12 +64,11 @@ import Arrow from "./icons/Arrow.astro";
           href="https://www.linkedin.com/in/sebitabravo/"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center transition-all duration-300 hover:scale-105 group"
+          class="inline-flex items-center transition-colors duration-300 group"
         >
           <Badge>
             <span class="flex items-center gap-2">
-              <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"
-              ></span>
+              <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
               Disponible para trabajar
             </span>
           </Badge>
@@ -78,7 +79,7 @@ import Arrow from "./icons/Arrow.astro";
       <div class="flex justify-center items-center space-x-10 mb-16">
         <a
           href="mailto:sebitabravocontacto@gmail.com"
-          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-primary-500/20 hover:border-primary-400/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary-500/25"
+          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-primary-500/20 hover:border-primary-400/50 transition-colors duration-300"
           aria-label="Enviar email"
         >
           <MailIcon class="w-6 h-6" />
@@ -87,7 +88,7 @@ import Arrow from "./icons/Arrow.astro";
           href="https://www.linkedin.com/in/sebitabravo/"
           target="_blank"
           rel="noopener"
-          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-secondary-500/20 hover:border-secondary-400/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-secondary-500/25"
+          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-secondary-500/20 hover:border-secondary-400/50 transition-colors duration-300"
           aria-label="Ver perfil de LinkedIn"
         >
           <LinkedInIcon class="w-6 h-6" />
@@ -96,7 +97,7 @@ import Arrow from "./icons/Arrow.astro";
           href="https://github.com/sebitabravo"
           target="_blank"
           rel="noopener"
-          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-neutral-500/20 hover:border-neutral-400/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-neutral-500/25"
+          class="group p-4 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-neutral-200 hover:text-white hover:bg-neutral-500/20 hover:border-neutral-400/50 transition-colors duration-300"
           aria-label="Ver perfil de GitHub"
         >
           <GitHubIcon class="w-6 h-6" />
@@ -108,9 +109,7 @@ import Arrow from "./icons/Arrow.astro";
         <AnimatedButton href="#experiencia" variant="primary" size="lg">
           <span class="flex items-center gap-2">
             Ver mi experiencia
-            <Arrow
-              class="w-5 h-5 transition-transform group-hover:translate-x-1"
-            />
+            <Arrow class="w-5 h-5 transition-none" />
           </span>
         </AnimatedButton>
       </div>
@@ -119,11 +118,11 @@ import Arrow from "./icons/Arrow.astro";
 
   <!-- Floating elements for visual interest -->
   <div
-    class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-pulse"
+    class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"
   >
   </div>
   <div
-    class="absolute bottom-20 right-10 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse delay-1000"
+    class="absolute bottom-20 right-10 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"
   >
   </div>
 </section>
