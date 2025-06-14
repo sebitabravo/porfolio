@@ -61,5 +61,12 @@
     "shortCode": "API789",
     "customPath": "public-apis",
     "createdAt": "2025-06-08T05:48:00.123Z"
+  },
+  {
+    "id": "1749361940456-VLC123",
+    "originalUrl": "https://vulcania.vercel.app/",
+    "shortCode": "VLC123",
+    "customPath": "vulcania",
+    "createdAt": "2025-06-14T17:10:00.456Z"
   }
 ]
