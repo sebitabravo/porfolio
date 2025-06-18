@@ -3,19 +3,21 @@ import ExperienceCard from "./ExperienceCard.astro";
 import { CONFIG } from "../utils/config.js";
 ---
 
-<section
-  id="experiencia"
-  class="py-24 bg-gradient-to-br from-neutral-50 via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-800 dark:to-primary-950/30"
->
+<section id="experiencia" class="py-24 bg-transparent">
   <div class="container mx-auto px-6 lg:px-8">
     <h2
-      class="text-4xl md:text-5xl font-display font-bold text-center bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 dark:from-primary-400 dark:via-primary-500 dark:to-primary-600 bg-clip-text mb-16 text-white"
+      class="text-3xl md:text-4xl font-display font-bold text-center mb-16 flex items-center justify-center gap-4"
     >
-      💼 Experiencia
+      <span class="text-4xl md:text-5xl">💼</span>
+      <span
+        class="bg-gradient-to-r from-white via-primary-200 to-primary-300 bg-clip-text text-transparent"
+      >
+        Experiencia
+      </span>
     </h2>
 
-    <!--<div class="max-w-4xl mx-auto space-y-12">
-      <ExperienceCard
+    <div class="max-w-4xl mx-auto space-y-6 md:space-y-8">
+      <!--<ExperienceCard
         company="Inacap"
         position="Estudiante de Ingeniería en Informática"
         period="Actualmente"
@@ -24,12 +26,13 @@ import { CONFIG } from "../utils/config.js";
         companyUrl={CONFIG.INACAP_URL}
       />-->
 
-    <ExperienceCard
-      company="Telsur"
-      position="Técnico en Telecomunicaciones"
-      period="Diciembre 2022"
-      description="Responsable de la instalación y funcionamiento de los servicios de conectividad y redes. Experiencia en configuración de equipos de telecomunicaciones y soporte técnico especializado."
-      companyUrl={CONFIG.TELSUR_URL}
-    />
+      <ExperienceCard
+        company="Telsur"
+        position="Técnico en Telecomunicaciones"
+        period="Diciembre 2022"
+        description="Responsable de la instalación y funcionamiento de los servicios de conectividad y redes. Experiencia en configuración de equipos de telecomunicaciones y soporte técnico especializado."
+        companyUrl={CONFIG.TELSUR_URL}
+      />
+    </div>
   </div>
 </section>
