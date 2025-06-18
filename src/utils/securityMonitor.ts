@@ -55,33 +55,10 @@ export function getSecurityMetrics(): AttackMetrics {
   };
 }
 
-export function generateSecurityReport(): string {
-  const metrics = getSecurityMetrics();
-
-  return `
-=== REPORTE DE SEGURIDAD ===
-Total de Requests: ${metrics.totalRequests}
-Requests Bloqueados: ${metrics.blockedRequests}
-IPs Sospechosas: ${metrics.suspiciousIPs.length}
-Patrones de Ataque Detectados: ${Object.keys(metrics.attackPatterns).length}
-
-Patrones de Ataque:
-${Object.entries(metrics.attackPatterns)
-  .map(([pattern, count]) => `- ${pattern}: ${count}`)
-  .join('\n')}
-
-IPs Sospechosas:
-${metrics.suspiciousIPs.map(ip => `- ${ip}`).join('\n')}
-
-Generado: ${metrics.lastUpdated}
-`;
-}
-
 // Crear una instancia singleton para compatibilidad
 export const securityMonitor = {
   recordRequest,
   recordAttackPattern,
   isSuspiciousIP,
-  getMetrics: getSecurityMetrics,
-  generateSecurityReport
+  getMetrics: getSecurityMetrics
 };
