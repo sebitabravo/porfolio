@@ -3,15 +3,17 @@ import Star from "./icons/Star.astro";
 import ExternalLink from "./icons/ExternalLink.astro";
 ---
 
-<section
-  id="certificaciones"
-  class="py-24 bg-gradient-to-br from-secondary-50 via-white to-primary-50 dark:from-neutral-900 dark:via-secondary-900/10 dark:to-neutral-800"
->
+<section id="certificaciones" class="py-24 bg-transparent">
   <div class="container mx-auto px-6 lg:px-8">
     <h2
-      class="text-3xl md:text-4xl font-display font-bold text-center bg-gradient-to-r from-secondary-600 via-primary-600 to-secondary-800 dark:from-secondary-400 dark:via-primary-400 dark:to-secondary-300 bg-clip-text mb-16"
+      class="text-3xl md:text-4xl font-display font-bold text-center mb-16 flex items-center justify-center gap-4"
     >
-      🏆 Licencias y certificaciones
+      <span class="text-4xl md:text-5xl">🏆</span>
+      <span
+        class="bg-gradient-to-r from-white via-primary-200 to-secondary-300 bg-clip-text text-transparent"
+      >
+        Licencias y certificaciones
+      </span>
     </h2>
 
     <div class="max-w-4xl mx-auto space-y-8">
@@ -19,53 +21,51 @@ import ExternalLink from "./icons/ExternalLink.astro";
       <div id="visible-certifications" class="space-y-8">
         <!-- Git de noob a pro -->
         <div
-          class="group relative bg-gradient-to-br from-white to-secondary-50/50 dark:from-neutral-800 dark:to-secondary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-secondary-300 dark:hover:border-secondary-600 hover:shadow-2xl hover:shadow-secondary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+          class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
         >
-          <!-- Background gradient effect -->
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-secondary-50/50 to-transparent dark:from-secondary-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-
-          <div class="relative flex items-start space-x-6">
-            <div class="flex-shrink-0">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+            <div class="flex-shrink-0 self-center sm:self-start">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-colors duration-300"
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-2xl flex items-center justify-center shadow-lg"
               >
-                <span class="text-white font-bold text-xs">MM</span>
+                <span class="text-white font-bold text-xs md:text-sm">MM</span>
               </div>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0 text-center sm:text-left">
               <h3
-                class="text-xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-secondary-600 dark:group-hover:text-secondary-400 transition-colors duration-300"
+                class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-secondary-400 transition-colors duration-300"
               >
                 Git de noob a pro
               </h3>
               <p
-                class="text-secondary-600 dark:text-secondary-400 font-semibold mb-3 text-lg"
+                class="text-secondary-400 font-semibold mb-3 text-base md:text-lg"
               >
                 Mastermind
               </p>
-              <div class="flex items-center space-x-2 mb-3">
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+              >
                 <div class="w-2 h-2 bg-secondary-500 rounded-full"></div>
-                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                <p class="text-neutral-300 font-medium text-sm md:text-base">
                   Expedición: ene. 2025
                 </p>
               </div>
               <div
-                class="flex items-start space-x-3 text-neutral-700 dark:text-neutral-300 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-4 mb-4"
+                class="flex items-start space-x-3 text-neutral-300 bg-white/5 rounded-xl p-3 md:p-4 mb-4"
               >
-                <Star class="w-5 h-5 text-secondary-500 mt-0.5 flex-shrink-0" />
-                <span class="text-sm leading-relaxed"
+                <Star
+                  class="w-4 h-4 md:w-5 md:h-5 text-secondary-500 mt-1 flex-shrink-0"
+                />
+                <span class="text-xs md:text-sm leading-relaxed"
                   >Git BASH, Control de versiones, GitHub y más</span
                 >
               </div>
-              <div>
+              <div class="flex justify-center sm:justify-start">
                 <a
                   href="/certifications/Git-de-noob-a-pro.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  class="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-secondary-500/20 hover:bg-secondary-500 text-secondary-200 hover:text-white font-medium rounded-xl border border-secondary-500/30 hover:border-secondary-500 transition-all duration-300"
                 >
                   <ExternalLink class="w-4 h-4" />
                   <span>Ver certificado</span>
@@ -77,54 +77,53 @@ import ExternalLink from "./icons/ExternalLink.astro";
 
         <!-- Desarrollador Full Stack -->
         <div
-          class="group relative bg-gradient-to-br from-white to-accent-50/50 dark:from-neutral-800 dark:to-accent-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-accent-300 dark:hover:border-accent-600 hover:shadow-2xl hover:shadow-accent-500/10 transition-all duration-500 transform hover:-translate-y-2"
+          class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
         >
-          <!-- Background gradient effect -->
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-accent-50/50 to-transparent dark:from-accent-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-
-          <div class="relative flex items-start space-x-6">
-            <div class="flex-shrink-0">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+            <div class="flex-shrink-0 self-center sm:self-start">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg"
               >
-                <span class="text-white font-bold text-xs">INACAP</span>
+                <span class="text-white font-bold text-xs md:text-sm"
+                  >INACAP</span
+                >
               </div>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0 text-center sm:text-left">
               <h3
-                class="text-xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors duration-300"
+                class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-accent-400 transition-colors duration-300"
               >
                 Desarrollador Full Stack
               </h3>
               <p
-                class="text-accent-600 dark:text-accent-400 font-semibold mb-3 text-lg"
+                class="text-accent-400 font-semibold mb-3 text-base md:text-lg"
               >
                 Universidad Tecnológica de Chile, INACAP
               </p>
-              <div class="flex items-center space-x-2 mb-3">
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+              >
                 <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
-                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                <p class="text-neutral-300 font-medium text-sm md:text-base">
                   Expedición: dic. 2024
                 </p>
               </div>
               <div
-                class="flex items-start space-x-3 text-neutral-700 dark:text-neutral-300 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-4 mb-4"
+                class="flex items-start space-x-3 text-neutral-300 bg-white/5 rounded-xl p-3 md:p-4 mb-4"
               >
-                <Star class="w-5 h-5 text-accent-500 mt-0.5 flex-shrink-0" />
-                <span class="text-sm leading-relaxed"
+                <Star
+                  class="w-4 h-4 md:w-5 md:h-5 text-accent-500 mt-1 flex-shrink-0"
+                />
+                <span class="text-xs md:text-sm leading-relaxed"
                   >CSS, Django, HTML, JavaScript, React, Node.js y más</span
                 >
-                >
               </div>
-              <div>
+              <div class="flex justify-center sm:justify-start">
                 <a
                   href="/certifications/DESARROLLADOR-FULL-STACK.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  class="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-accent-500/20 hover:bg-accent-500 text-accent-200 hover:text-white font-medium rounded-xl border border-accent-500/30 hover:border-accent-500 transition-all duration-300"
                 >
                   <ExternalLink class="w-4 h-4" />
                   <span>Ver certificado</span>
@@ -139,39 +138,43 @@ import ExternalLink from "./icons/ExternalLink.astro";
       <div id="hidden-certifications" class="space-y-8 hidden">
         <!-- Desarrollo de Aplicaciones Básicas -->
         <div
-          class="group relative bg-gradient-to-br from-white to-primary-50/50 dark:from-neutral-800 dark:to-primary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+          class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
         >
-          <div class="relative flex items-start space-x-6">
-            <div class="flex-shrink-0">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+            <div class="flex-shrink-0 self-center sm:self-start">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg"
               >
-                <span class="text-white font-bold text-xs">INACAP</span>
+                <span class="text-white font-bold text-xs md:text-sm"
+                  >INACAP</span
+                >
               </div>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0 text-center sm:text-left">
               <h3
-                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+                class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors duration-300"
               >
                 Desarrollo de Aplicaciones Básicas
               </h3>
               <p
-                class="text-primary-600 dark:text-primary-400 font-semibold mb-3"
+                class="text-primary-400 font-semibold mb-3 text-base md:text-lg"
               >
                 Universidad Tecnológica de Chile, INACAP
               </p>
-              <div class="flex items-center space-x-2 mb-3">
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+              >
                 <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                <p class="text-neutral-300 font-medium text-sm md:text-base">
                   Expedición: 2024
                 </p>
               </div>
-              <div>
+              <div class="flex justify-center sm:justify-start">
                 <a
                   href="/certifications/DESARROLLO-DE-APLICACIONES-BASICAS.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  class="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-primary-500/20 hover:bg-primary-500 text-primary-200 hover:text-white font-medium rounded-xl border border-primary-500/30 hover:border-primary-500 transition-all duration-300"
                 >
                   <ExternalLink class="w-4 h-4" />
                   <span>Ver certificado</span>
@@ -183,39 +186,41 @@ import ExternalLink from "./icons/ExternalLink.astro";
 
         <!-- Diseño y Gestión de Base de Datos -->
         <div
-          class="group relative bg-gradient-to-br from-white to-accent-50/50 dark:from-neutral-800 dark:to-accent-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-accent-300 dark:hover:border-accent-600 hover:shadow-2xl hover:shadow-accent-500/10 transition-all duration-500 transform hover:-translate-y-2"
+          class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
         >
-          <div class="relative flex items-start space-x-6">
-            <div class="flex-shrink-0">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+            <div class="flex-shrink-0 self-center sm:self-start">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg"
               >
-                <span class="text-white font-bold text-xs">DB</span>
+                <span class="text-white font-bold text-xs md:text-sm">DB</span>
               </div>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0 text-center sm:text-left">
               <h3
-                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+                class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-accent-400 transition-colors duration-300"
               >
                 Diseño y Gestión de Base de Datos
               </h3>
               <p
-                class="text-accent-600 dark:text-accent-400 font-semibold mb-3"
+                class="text-accent-400 font-semibold mb-3 text-base md:text-lg"
               >
                 Universidad Tecnológica de Chile, INACAP
               </p>
-              <div class="flex items-center space-x-2 mb-3">
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+              >
                 <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
-                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                <p class="text-neutral-300 font-medium text-sm md:text-base">
                   Expedición: 2024
                 </p>
               </div>
-              <div>
+              <div class="flex justify-center sm:justify-start">
                 <a
                   href="/certifications/DISEÑO-Y-GESTIÓN-DE-BASE-DE-DATOS.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  class="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-accent-500/20 hover:bg-accent-500 text-accent-200 hover:text-white font-medium rounded-xl border border-accent-500/30 hover:border-accent-500 transition-all duration-300"
                 >
                   <ExternalLink class="w-4 h-4" />
                   <span>Ver certificado</span>
@@ -227,39 +232,41 @@ import ExternalLink from "./icons/ExternalLink.astro";
 
         <!-- Diseño Ágil de Sistemas -->
         <div
-          class="group relative bg-gradient-to-br from-white to-secondary-50/50 dark:from-neutral-800 dark:to-secondary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-secondary-300 dark:hover:border-secondary-600 hover:shadow-2xl hover:shadow-secondary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+          class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
         >
-          <div class="relative flex items-start space-x-6">
-            <div class="flex-shrink-0">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+            <div class="flex-shrink-0 self-center sm:self-start">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-2xl flex items-center justify-center shadow-lg"
               >
-                <span class="text-white font-bold text-xs">SYS</span>
+                <span class="text-white font-bold text-xs md:text-sm">SYS</span>
               </div>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0 text-center sm:text-left">
               <h3
-                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+                class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-secondary-400 transition-colors duration-300"
               >
                 Diseño Ágil de Sistemas
               </h3>
               <p
-                class="text-secondary-600 dark:text-secondary-400 font-semibold mb-3"
+                class="text-secondary-400 font-semibold mb-3 text-base md:text-lg"
               >
                 Universidad Tecnológica de Chile, INACAP
               </p>
-              <div class="flex items-center space-x-2 mb-3">
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+              >
                 <div class="w-2 h-2 bg-secondary-500 rounded-full"></div>
-                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                <p class="text-neutral-300 font-medium text-sm md:text-base">
                   Expedición: 2024
                 </p>
               </div>
-              <div>
+              <div class="flex justify-center sm:justify-start">
                 <a
                   href="/certifications/DISEÑO-ÁGIL-DE-SISTEMAS.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  class="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-secondary-500/20 hover:bg-secondary-500 text-secondary-200 hover:text-white font-medium rounded-xl border border-secondary-500/30 hover:border-secondary-500 transition-all duration-300"
                 >
                   <ExternalLink class="w-4 h-4" />
                   <span>Ver certificado</span>
@@ -271,39 +278,41 @@ import ExternalLink from "./icons/ExternalLink.astro";
 
         <!-- Soporte Computacional -->
         <div
-          class="group relative bg-gradient-to-br from-white to-primary-50/50 dark:from-neutral-800 dark:to-primary-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 transform hover:-translate-y-2"
+          class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
         >
-          <div class="relative flex items-start space-x-6">
-            <div class="flex-shrink-0">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+            <div class="flex-shrink-0 self-center sm:self-start">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg"
               >
-                <span class="text-white font-bold text-xs">IT</span>
+                <span class="text-white font-bold text-xs md:text-sm">IT</span>
               </div>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0 text-center sm:text-left">
               <h3
-                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+                class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors duration-300"
               >
                 Soporte Computacional
               </h3>
               <p
-                class="text-primary-600 dark:text-primary-400 font-semibold mb-3"
+                class="text-primary-400 font-semibold mb-3 text-base md:text-lg"
               >
                 Universidad Tecnológica de Chile, INACAP
               </p>
-              <div class="flex items-center space-x-2 mb-3">
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+              >
                 <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                <p class="text-neutral-300 font-medium text-sm md:text-base">
                   Expedición: 2024
                 </p>
               </div>
-              <div>
+              <div class="flex justify-center sm:justify-start">
                 <a
                   href="/certifications/SOPORTE-COMPUTACIONAL.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  class="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-primary-500/20 hover:bg-primary-500 text-primary-200 hover:text-white font-medium rounded-xl border border-primary-500/30 hover:border-primary-500 transition-all duration-300"
                 >
                   <ExternalLink class="w-4 h-4" />
                   <span>Ver certificado</span>
@@ -315,39 +324,41 @@ import ExternalLink from "./icons/ExternalLink.astro";
 
         <!-- Instalación y Configuración de Windows -->
         <div
-          class="group relative bg-gradient-to-br from-white to-accent-50/50 dark:from-neutral-800 dark:to-accent-900/20 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700 hover:border-accent-300 dark:hover:border-accent-600 hover:shadow-2xl hover:shadow-accent-500/10 transition-all duration-500 transform hover:-translate-y-2"
+          class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
         >
-          <div class="relative flex items-start space-x-6">
-            <div class="flex-shrink-0">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+            <div class="flex-shrink-0 self-center sm:self-start">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300"
+                class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-lg"
               >
-                <span class="text-white font-bold text-xs">WIN</span>
+                <span class="text-white font-bold text-xs md:text-sm">WIN</span>
               </div>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0 text-center sm:text-left">
               <h3
-                class="text-xl font-bold text-neutral-900 dark:text-white mb-2"
+                class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-accent-400 transition-colors duration-300"
               >
                 Instalación y Configuración de Windows
               </h3>
               <p
-                class="text-accent-600 dark:text-accent-400 font-semibold mb-3"
+                class="text-accent-400 font-semibold mb-3 text-base md:text-lg"
               >
                 Universidad Tecnológica de Chile, INACAP
               </p>
-              <div class="flex items-center space-x-2 mb-3">
+              <div
+                class="flex items-center justify-center sm:justify-start space-x-2 mb-4"
+              >
                 <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
-                <p class="text-neutral-700 dark:text-neutral-300 font-medium">
+                <p class="text-neutral-300 font-medium text-sm md:text-base">
                   Expedición: 2024
                 </p>
               </div>
-              <div>
+              <div class="flex justify-center sm:justify-start">
                 <a
                   href="/certifications/Instalación-y-Configuración-de-Windows.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  class="inline-flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-accent-500/20 hover:bg-accent-500 text-accent-200 hover:text-white font-medium rounded-xl border border-accent-500/30 hover:border-accent-500 transition-all duration-300"
                 >
                   <ExternalLink class="w-4 h-4" />
                   <span>Ver certificado</span>
@@ -362,12 +373,14 @@ import ExternalLink from "./icons/ExternalLink.astro";
         <button
           id="toggle-certifications-btn"
           onclick="toggleCertifications()"
-          class="group inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800 hover:from-primary-100 hover:to-secondary-100 dark:hover:from-primary-800/50 dark:hover:to-secondary-800/50 text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 rounded-2xl border border-neutral-200 dark:border-neutral-600 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+          class="group inline-flex items-center space-x-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl border border-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105"
         >
-          <span id="toggle-text" class="font-semibold">Mostrar todo (7)</span>
+          <span id="toggle-text" class="font-semibold text-sm md:text-base"
+            >Mostrar todo (7)</span
+          >
           <svg
             id="toggle-arrow"
-            class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+            class="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform duration-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
