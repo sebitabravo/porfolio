@@ -4,37 +4,27 @@ import MailOutline from "./icons/MailOutline.astro";
 import Copy from "./icons/Copy.astro";
 ---
 
-<section
-  id="sobre-mi"
-  class="relative py-24 bg-gradient-to-br from-neutral-50 to-primary-50/30 dark:from-neutral-900 dark:to-primary-950/20"
->
-  <!-- Background decoration -->
-  <div
-    class="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))]"
-  >
-  </div>
+<section id="sobre-mi" class="py-24 bg-transparent">
+  <div class="container mx-auto px-6 lg:px-8">
+    <!-- Section Header -->
+    <h2
+      class="text-4xl md:text-5xl font-display font-bold text-center mb-16 flex items-center justify-center gap-4"
+    >
+      <span class="text-5xl md:text-6xl">🧑‍💻</span>
+      <span
+        class="bg-gradient-to-r from-white via-primary-200 to-primary-300 bg-clip-text text-transparent"
+      >
+        Sobre mí
+      </span>
+    </h2>
 
-  <div class="relative container mx-auto px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2
-          class="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 dark:from-primary-400 dark:via-primary-500 dark:to-primary-600 bg-clip-text mb-6"
-        >
-          🧑‍💻 Sobre mí
-        </h2>
-        <div
-          class="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"
-        >
-        </div>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Image Section -->
-        <div class="order-2 lg:order-1">
-          <div class="relative group">
+        <div class="order-2 lg:order-1 flex justify-center">
+          <div class="relative group max-w-md w-full">
             <div
-              class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur-2xl"
+              class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"
             >
             </div>
             <div
@@ -52,10 +42,10 @@ import Copy from "./icons/Copy.astro";
         </div>
 
         <!-- Content Section -->
-        <div class="order-1 lg:order-2 space-y-8">
-          <div class="space-y-6">
+        <div class="order-1 lg:order-2 space-y-6">
+          <div class="space-y-4">
             <p
-              class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed"
+              class="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed"
             >
               Mi nombre es <span
                 class="font-semibold text-primary-600 dark:text-primary-400"
@@ -71,7 +61,7 @@ import Copy from "./icons/Copy.astro";
             </p>
 
             <p
-              class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed"
+              class="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed"
             >
               Poseo un <span
                 class="font-semibold text-primary-600 dark:text-primary-400"
@@ -81,7 +71,7 @@ import Copy from "./icons/Copy.astro";
             </p>
 
             <p
-              class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed"
+              class="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed"
             >
               Durante mi formación técnica en telecomunicaciones, <span
                 class="font-semibold text-secondary-600 dark:text-secondary-400"
@@ -93,36 +83,35 @@ import Copy from "./icons/Copy.astro";
           </div>
 
           <!-- Contact Section -->
-          <div class="space-y-6 pt-4">
+          <div class="space-y-4 pt-6">
             <h3
-              class="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-3"
+              class="text-xl md:text-2xl font-bold text-neutral-300 flex items-center gap-3"
             >
               <span
-                class="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"
+                class="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"
               >
-                <MailOutline class="w-4 h-4 text-white" />
+                <MailOutline class="w-3 h-3 md:w-4 md:h-4 text-white" />
               </span>
               Contacto
             </h3>
 
             <div
-              class="group relative bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg ring-1 ring-neutral-200 dark:ring-neutral-700 hover:shadow-xl transition-shadow duration-300"
+              class="group relative bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-lg ring-1 ring-white/20 hover:bg-white/20 transition-all duration-300"
             >
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-4">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3 md:gap-4">
                   <div
-                    class="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"
+                    class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center flex-shrink-0"
                   >
-                    <MailOutline class="w-6 h-6 text-white" />
+                    <MailOutline class="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
-                  <div>
-                    <p
-                      class="text-sm font-medium text-neutral-600 dark:text-neutral-400"
-                    >
+                  <div class="min-w-0 flex-1">
+                    <p class="text-xs md:text-sm font-medium text-neutral-400">
                       Email
                     </p>
                     <p
-                      class="text-lg font-semibold text-neutral-900 dark:text-white"
+                      class="text-sm md:text-base font-semibold text-white break-all"
+                      id="emailText"
                     >
                       sebitabravocontacto@gmail.com
                     </p>
@@ -130,11 +119,16 @@ import Copy from "./icons/Copy.astro";
                 </div>
 
                 <button
-                  class="p-3 rounded-lg bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-primary-500 hover:text-white transition-colors duration-300"
-                  onclick="navigator.clipboard.writeText('sebitabravocontacto@gmail.com')"
+                  id="copyButton"
+                  class="w-full sm:w-auto px-4 py-3 rounded-lg bg-primary-500/20 text-primary-200 hover:bg-primary-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 border border-primary-500/30 hover:border-primary-500 font-medium"
+                  onclick="copyEmail()"
                   title="Copiar email"
                 >
-                  <Copy class="w-5 h-5" />
+                  <Copy
+                    id="copyIcon"
+                    class="w-4 h-4 transition-all duration-300"
+                  />
+                  <span id="copyText">Copiar Email</span>
                 </button>
               </div>
             </div>
@@ -144,3 +138,40 @@ import Copy from "./icons/Copy.astro";
     </div>
   </div>
 </section>
+
+<script>
+  function copyEmail() {
+    const email = "sebitabravocontacto@gmail.com";
+    const button = document.getElementById("copyButton");
+    const icon = document.getElementById("copyIcon");
+    const text = document.getElementById("copyText");
+
+    if (!button || !icon || !text) return;
+
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        // Cambiar icono por un check y texto
+        icon.style.display = "none";
+        text.textContent = "✓ ¡Copiado!";
+
+        // Volver al estado original después de 2 segundos
+        setTimeout(() => {
+          icon.style.display = "block";
+          text.textContent = "Copiar Email";
+        }, 2000);
+      })
+      .catch(() => {
+        // En caso de error, mostrar mensaje temporal
+        const originalText = text.textContent;
+        text.textContent = "Error al copiar";
+
+        setTimeout(() => {
+          text.textContent = originalText;
+        }, 2000);
+      });
+  }
+
+  // Hacer la función globalmente accesible
+  (window as any).copyEmail = copyEmail;
+</script>
