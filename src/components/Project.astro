@@ -2,20 +2,22 @@
 import ProjectCard from "./ProjectCard.astro";
 ---
 
-<section
-  id="proyectos"
-  class="py-24 bg-gradient-to-br from-secondary-50/30 via-white to-accent-50/30 dark:from-neutral-900 dark:via-secondary-950/10 dark:to-neutral-800"
->
+<section id="proyectos" class="py-24 bg-transparent">
   <div class="container mx-auto px-6 lg:px-8">
     <h2
-      class="text-4xl md:text-5xl font-display font-bold text-center bg-gradient-to-r from-secondary-600 via-accent-600 to-secondary-800 dark:from-secondary-400 dark:via-accent-400 dark:to-secondary-300 bg-clip-text mb-16"
+      class="text-3xl md:text-4xl font-display font-bold text-center mb-16 flex items-center justify-center gap-4"
     >
-      🚀 Proyectos
+      <span class="text-4xl md:text-5xl">🚀</span>
+      <span
+        class="bg-gradient-to-r from-white via-primary-200 to-secondary-300 bg-clip-text text-transparent"
+      >
+        Proyectos
+      </span>
     </h2>
   </div>
 
   <div
-    class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6 lg:px-8"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-7xl mx-auto px-6 lg:px-8"
   >
     <ProjectCard
       title="Crm Workers"
