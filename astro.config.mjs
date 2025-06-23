@@ -8,17 +8,6 @@ export default defineConfig({
   site: 'https://sebita.dev/',
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      minify: 'esbuild',
-      cssCodeSplit: true,
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'vendor': ['astro'],
-          }
-        }
-      }
-    },
   },
   output: 'server',
   compressHTML: true,
