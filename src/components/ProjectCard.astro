@@ -22,7 +22,10 @@ const { title, description, image, technologies, demoUrl, githubUrl } =
       alt={`Preview de ${title}`}
       width="400"
       height="192"
-      class="w-full h-48 object-cover"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-48 object-cover preload-hidden"
+      onload="this.classList.remove('preload-hidden'); this.classList.add('preload-visible');"
     />
     <div
       class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"

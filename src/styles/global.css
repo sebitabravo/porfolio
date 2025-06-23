@@ -1,3 +1,11 @@
 @import "tailwindcss";
 
+/* Essential image loading optimization */
+.preload-hidden {
+  opacity: 0;
+}
 
+.preload-visible {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}

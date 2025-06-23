@@ -6,13 +6,36 @@ import { vercelOptimizer, VERCEL_CONFIG } from './utils/vercelOptimizer';
 export const onRequest: MiddlewareHandler = async (context, next) => {
   const url = new URL(context.request.url);
 
-  // Solo aplicar middleware a rutas dinámicas y APIs
+  // Optimización: Skip middleware para assets estáticos
+  const isStaticAsset =
+    url.pathname.startsWith('/_astro/') ||
+    url.pathname.startsWith('/favicon') ||
+    url.pathname.endsWith('.webp') ||
+    url.pathname.endsWith('.png') ||
+    url.pathname.endsWith('.jpg') ||
+    url.pathname.endsWith('.jpeg') ||
+    url.pathname.endsWith('.svg') ||
+    url.pathname.endsWith('.css') ||
+    url.pathname.endsWith('.js');
+
+  if (isStaticAsset) {
+    const response = await next();
+    // Solo añadir cache headers para assets estáticos
+    const headers = new Headers(response.headers);
+    headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers
+    });
+  }
+
+  // Solo aplicar middleware completo a rutas dinámicas y APIs
   const isDynamicRoute =
     url.pathname.startsWith('/api/') ||
     url.pathname === '/shortcut' ||
     (url.pathname !== '/' &&
      !url.pathname.startsWith('/blog') &&
-     !url.pathname.startsWith('/_astro/') &&
      !url.pathname.includes('.'));
 
   // Skip middleware para páginas estáticas durante prerender

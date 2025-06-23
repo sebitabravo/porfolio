@@ -35,7 +35,10 @@ import Copy from "./icons/Copy.astro";
                 alt="Sebastian Bravo trabajando"
                 width="400"
                 height="400"
-                class="w-full rounded-xl shadow-lg"
+                loading="lazy"
+                decoding="async"
+                class="w-full rounded-xl shadow-lg preload-hidden"
+                onload="this.classList.remove('preload-hidden'); this.classList.add('preload-visible');"
               />
             </div>
           </div>

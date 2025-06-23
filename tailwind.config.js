@@ -2,6 +2,12 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
+  future: {
+    hoverOnlyWhenSupported: true, // Optimize hover states for touch devices
+  },
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
   theme: {
     extend: {
       colors: {

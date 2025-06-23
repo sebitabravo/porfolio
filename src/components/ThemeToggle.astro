@@ -19,7 +19,7 @@ import Sun from "./icons/Sun.astro";
 </button>
 
 <script>
-  // Theme toggle functionality
+  // Optimized theme toggle functionality
   function initThemeToggle() {
     const themeToggleBtn = document.getElementById("theme-toggle");
     const themeToggleDarkIcon = document.getElementById(
@@ -29,23 +29,14 @@ import Sun from "./icons/Sun.astro";
       "theme-toggle-light-icon"
     );
 
-    if (!themeToggleBtn || !themeToggleDarkIcon || !themeToggleLightIcon) {
-      console.warn("Theme toggle elements not found");
+    if (!themeToggleBtn || !themeToggleDarkIcon || !themeToggleLightIcon)
       return;
-    }
 
-    // Function to update icon display
-    function updateIcons(isDark: boolean) {
-      if (!themeToggleDarkIcon || !themeToggleLightIcon) return;
-
-      if (isDark) {
-        themeToggleDarkIcon.classList.add("hidden");
-        themeToggleLightIcon.classList.remove("hidden");
-      } else {
-        themeToggleDarkIcon.classList.remove("hidden");
-        themeToggleLightIcon.classList.add("hidden");
-      }
-    }
+    // Optimized function to update icon display
+    const updateIcons = (isDark: boolean) => {
+      themeToggleDarkIcon.classList.toggle("hidden", isDark);
+      themeToggleLightIcon.classList.toggle("hidden", !isDark);
+    };
 
     // Initialize icon display based on current theme
     const currentTheme = localStorage.getItem("theme");
@@ -56,25 +47,27 @@ import Sun from "./icons/Sun.astro";
 
     updateIcons(isDarkMode);
 
-    // Toggle theme on button click
-    themeToggleBtn.addEventListener("click", function () {
-      const currentlyDark = document.documentElement.classList.contains("dark");
+    // Optimized toggle theme function
+    themeToggleBtn.addEventListener(
+      "click",
+      () => {
+        const currentlyDark =
+          document.documentElement.classList.contains("dark");
+        const newTheme = currentlyDark ? "light" : "dark";
 
-      if (currentlyDark) {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-        updateIcons(false);
-      } else {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-        updateIcons(true);
-      }
-    });
+        document.documentElement.classList.toggle("dark", !currentlyDark);
+        localStorage.setItem("theme", newTheme);
+        updateIcons(!currentlyDark);
+      },
+      { passive: true }
+    );
   }
 
-  // Initialize when DOM is loaded
+  // Use more efficient initialization
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initThemeToggle);
+    document.addEventListener("DOMContentLoaded", initThemeToggle, {
+      once: true,
+    });
   } else {
     initThemeToggle();
   }
