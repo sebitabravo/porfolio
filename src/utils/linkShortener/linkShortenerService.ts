@@ -71,6 +71,8 @@ function getBaseUrl(): string {
     return 'http://localhost:4321';
   }
 
-  // Fallback para producción cuando no está configurado BASE_DOMAIN
-  return 'https://tu-proyecto.vercel.app'; // Se recomienda configurar BASE_DOMAIN
+  // Usar el dominio configurado en el sitio de Astro o un fallback seguro
+  return process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'https://sebita.dev';
 }

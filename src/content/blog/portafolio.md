@@ -7,8 +7,6 @@ tags: ["astro", "tailwind", "typescript", "portafolio", "acortador-enlaces", "fu
 draft: false
 ---
 
-# Mi travesía construyendo un portafolio profesional con Astro y Tailwind
-
 En este artículo voy a compartir toda la travesía detrás del desarrollo de mi portafolio profesional, desde la concepción inicial hasta la implementación de características avanzadas como un sistema completo de acortamiento de enlaces, middleware de seguridad y mucho más.
 
 ## 🚀 La visión del proyecto
@@ -28,6 +26,7 @@ Lo que comenzó como un simple portafolio terminó evolucionando en una platafor
 **Astro** se convirtió en la columna vertebral de mi proyecto por varias razones técnicas:
 
 #### 1. Arquitectura "Islands" revolucionaria
+
 ```javascript
 // Componente con hidratación selectiva
 ---
@@ -42,12 +41,15 @@ Lo que comenzó como un simple portafolio terminó evolucionando en una platafor
 La arquitectura basada en islas me permitió cargar JavaScript solo donde era estrictamente necesario, manteniendo la mayor parte del sitio como HTML puro y rápido.
 
 #### 2. Rendimiento excepcional
+
 - **Lighthouse score**: 98-100 en todas las métricas
 - **Core Web Vitals**: Valores óptimos en FCP, LCP y CLS
 - **Carga inicial**: ~0.3 segundos en dispositivos modernos
 
 #### 3. Flexibilidad sin precedentes
+
 Pude integrar componentes cuando lo necesité:
+
 - **Components nativos de Astro** para la mayoría del sitio
 - **Scripts aislados** para la funcionalidad del acortador de enlaces
 - **Hidratación progresiva** para elementos interactivos
@@ -110,7 +112,7 @@ export default {
 
 La organización del proyecto contempla todas las necesidades desde el principio:
 
-```
+```text
 src/
 ├── components/     # +25 componentes reutilizables
 ├── layouts/        # Estructuras de página base
@@ -130,7 +132,7 @@ src/
 
 Una de las características más complejas que implementé fue un sistema completo de acortamiento de URLs:
 
-### Características principales:
+### Características principales
 
 1. **Rutas personalizadas** - Cada usuario puede definir su propia URL amigable
 2. **Panel de administración** - Con estadísticas y gestión de enlaces
@@ -249,6 +251,7 @@ Esto me permitió tener un blog completamente tipado con validación de esquema 
 Creé una biblioteca completa de componentes:
 
 #### AnimatedButton
+
 Un botón avanzado con diferentes variantes y animaciones:
 
 ```astro
@@ -278,6 +281,7 @@ const classes = {
 ```
 
 #### ThemeToggle
+
 Un sistema completo de cambio entre tema claro y oscuro:
 
 ```astro
@@ -306,13 +310,14 @@ Un sistema completo de cambio entre tema claro y oscuro:
 
 ## 🔍 Optimización y rendimiento
 
-### Métricas de Lighthouse:
+### Métricas de Lighthouse
+
 - ✅ **Performance**: 98/100
 - ✅ **Accessibility**: 100/100
 - ✅ **Best Practices**: 100/100
 - ✅ **SEO**: 100/100
 
-### Técnicas avanzadas implementadas:
+### Técnicas avanzadas implementadas
 
 1. **Imágenes WebP optimizadas** con carga lazy y dimensiones explícitas
 2. **Pre-carga selectiva** de recursos críticos
@@ -483,13 +488,15 @@ Todo el CSS está optimizado con clases utilitarias:
 
 ## 📊 Estadísticas y métricas
 
-### Rendimiento web (Lighthouse):
+### Rendimiento web (Lighthouse)
+
 - ✅ **Performance**: 98/100
 - ✅ **Accessibility**: 100/100
 - ✅ **Best Practices**: 100/100
 - ✅ **SEO**: 100/100
 
-### Métricas del proyecto:
+### Métricas del proyecto
+
 - **Componentes reutilizables**: +25
 - **Endpoints de API**: 7
 - **Mecanismos de seguridad**: 5

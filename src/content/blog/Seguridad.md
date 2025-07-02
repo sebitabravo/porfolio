@@ -7,8 +7,6 @@ tags: ["seguridad", "cloudflare", "vercel", "ssl", "ddos", "dns", "dominio"]
 draft: false
 ---
 
-# Implementando seguridad web completa: De principiante a configuración sólida
-
 En este artículo comparto cómo un simple despliegue en Vercel evolucionó hacia una implementación robusta de seguridad web: protección anti-DDoS, SSL/TLS y configuraciones avanzadas de seguridad gestionadas a través de Cloudflare.
 
 ## 🎯 El objetivo: Seguridad sin comprometer la experiencia
@@ -28,7 +26,7 @@ Para comenzar, encontré un recurso invaluable: el video de **Midudev** titulado
 
 Como principiante en temas de seguridad web, inicialmente me enfoqué en los primeros 45 minutos donde explicaba conceptos fundamentales:
 
-#### Conceptos clave que aprendí:
+#### Conceptos clave que aprendí
 
 1. **¿Qué son los ataques DDoS y DoS?**
    - **DoS (Denial of Service)**: Un solo atacante sobrecarga el servidor.
@@ -55,6 +53,7 @@ Una de las estrategias más efectivas que aprendí fue el **Attack Challenge Mod
 ![Configuración del Attack Challenge Mode](/blog/seguridad/enable-attack-challenge-mode.webp)
 
 #### ¿Cómo funciona?
+
 - Cada visitante debe completar un *challenge* de verificación humana.
 - Bloquea efectivamente bots maliciosos.
 - **Trade-off**: Ligero incremento en tiempo de carga (~2-3 segundos adicionales).
@@ -63,7 +62,8 @@ Una de las estrategias más efectivas que aprendí fue el **Attack Challenge Mod
 
 El segundo nivel de protección involucra **reglas personalizadas** para bloquear User-Agents específicos:
 
-#### Configuración de reglas anti-bot:
+#### Configuración de reglas anti-bot
+
 - Bloqueo de herramientas comunes: `curl`, `wget`, `python-requests`.
 - Detección de patrones de scripts automatizados.
 - Lista blanca para bots legítimos (Google, Bing, etc.).
@@ -125,7 +125,8 @@ El proceso de conexión del dominio con Vercel fue más directo de lo esperado:
 
 Siguiendo las mejores prácticas, configuré tanto el dominio raíz como el subdominio `www`:
 
-#### Configuración recomendada:
+#### Configuración recomendada
+
 - ✅ `sebita.dev` (dominio principal).
 - ✅ `www.sebita.dev` (redirección automática).
 

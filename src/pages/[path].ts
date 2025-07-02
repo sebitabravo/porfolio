@@ -33,7 +33,8 @@ export const GET: APIRoute = async ({ params, url }) => {
     });
   } catch (error) {
     // En caso de error, redirigir a 404
-    const baseUrl = new URL('http://localhost:4321'); // Fallback URL
-    return Response.redirect(`${baseUrl.origin}/404`, 302);
+    // Usar el origen de la URL actual para evitar problemas en producción
+    const baseUrl = url.origin || 'https://sebita.dev';
+    return Response.redirect(`${baseUrl}/404`, 302);
   }
 };
