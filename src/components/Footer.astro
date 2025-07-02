@@ -2,22 +2,39 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="bg-neutral-50 dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 mt-20"
->
-  <div class="container mx-auto px-6 lg:px-8 py-8">
-    <div class="text-center text-neutral-600 dark:text-neutral-400">
-      <span class="text-sm sm:text-center"
-        >&copy; {currentYear}
+<footer class="bg-neutral-50 dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 mt-20">
+  <div class="container mx-auto px-6 lg:px-8 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Enlaces adicionales discretos - izquierda -->
+      <div class="flex items-center space-x-6">
+        <a
+          href="/redes"
+          class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+        >
+          Mis Redes
+        </a>
+        <a
+          href="/shortcut"
+          class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+        >
+          Acortador
+        </a>
+      </div>
+
+      <!-- Copyright - derecha -->
+      <div class="text-sm text-neutral-600 dark:text-neutral-400">
+        &copy; {currentYear}
         <a
           href="https://www.linkedin.com/in/sebitabravo/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Ver perfil de LinkedIn de Sebastian Bravo"
-          class="text-neutral-800/90 dark:text-neutral-200/90 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 hover:underline"
-          >Sebastian Bravo</a
-        >. Todos los derechos reservados.
-      </span>
+          class="text-neutral-800 dark:text-neutral-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 hover:underline font-medium ml-1"
+        >
+          Sebastian Bravo
+        </a>
+        . Todos los derechos reservados.
+      </div>
     </div>
   </div>
 </footer>
