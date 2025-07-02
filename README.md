@@ -17,6 +17,7 @@ Porfolio profesional desarrollado con Astro y Tailwind CSS.
 - [TypeScript](https://www.typescriptlang.org/)
 
 ### 🔗 Acortador de Links
+
 - **Rutas Personalizadas**: Crea links con rutas memorables
 - **Acortamiento Automático**: Genera códigos aleatorios cuando no se especifica ruta
 - **Panel de Administración**: Vista detallada con estadísticas y gestión avanzada
@@ -28,6 +29,7 @@ Porfolio profesional desarrollado con Astro y Tailwind CSS.
 ## 📦 Instalación
 
 1. Clona el repositorio:
+
 ```bash
 git clone https://github.com/sebitabravo/porfolio.git
 cd porfolio
@@ -56,5 +58,6 @@ Sin embargo, **todo el contenido original** (textos, imágenes, marca personal y
 
 ## 👤 Autor
 
-**Sebastian Bravo**
+### Sebastian Bravo
+
 - 📧 Email: [sebitabravocontacto@gmail.com](mailto:sebitabravocontacto@gmail.com)

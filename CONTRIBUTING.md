@@ -14,11 +14,11 @@ El objetivo es que el historial de cambios sea:
 
 ## 📐 Estructura del Commit
 
-```
+```text
 <type>(<scope>): <short description>
 ```
 
-### Componentes:
+### Componentes
 
 - `<type>` → tipo de cambio (obligatorio)
 - `<scope>` → área del código afectada (opcional pero recomendado)
@@ -26,7 +26,7 @@ El objetivo es que el historial de cambios sea:
 
 Ejemplo:
 
-```
+```text
 feat(api): agregar endpoint de autenticación
 ```
 
@@ -50,7 +50,7 @@ feat(api): agregar endpoint de autenticación
 
 ## ✏️ Ejemplos de Commits
 
-```
+```text
 feat(api): agregar endpoint de autenticación
 fix(vercel): corregir configuración para producción
 chore(config): actualizar dependencias
@@ -77,13 +77,13 @@ ci(vercel): configurar adapter de Vercel
 
 Cuando se hace un release importante (nueva versión del proyecto), se utiliza:
 
-```
+```text
 feat: release vX.X.X
 ```
 
 Ejemplo:
 
-```
+```text
 feat: release v1.0.0
 ```
 
