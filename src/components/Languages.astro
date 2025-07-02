@@ -3,6 +3,8 @@ import HTML5 from "./icons/HTML5.astro";
 import CSS3 from "./icons/CSS3.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import Python from "./icons/Python.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
 ---
 
 <section id="lenguajes" class="relative py-24 bg-transparent">
@@ -42,7 +44,7 @@ import Python from "./icons/Python.astro";
     </div>
 
     <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
         <!-- HTML5 -->
         <div class="group relative">
           <div
@@ -152,6 +154,30 @@ import Python from "./icons/Python.astro";
             >
               Backend & Data
             </p>
+          </div>
+        </div>
+
+        <!-- NextJS -->
+        <div class="group relative">
+          <div class="absolute -inset-2 bg-gradient-to-r from-primary-500 to-gray-900 rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
+          <div class="relative bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-700 hover:shadow-2xl transition-shadow duration-500">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary-100 to-gray-200 dark:from-primary-900/50 dark:to-gray-900/50 rounded-xl flex items-center justify-center ring-2 ring-primary-200 dark:ring-primary-800">
+              <NextJS class="w-10 h-10" />
+            </div>
+            <h3 class="text-center font-bold text-lg text-neutral-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Next.js</h3>
+            <p class="text-center text-sm text-neutral-700 dark:text-neutral-300 mt-2">SSR & React</p>
+          </div>
+        </div>
+
+        <!-- Tailwind CSS -->
+        <div class="group relative">
+          <div class="absolute -inset-2 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl blur-xl"></div>
+          <div class="relative bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-700 hover:shadow-2xl transition-shadow duration-500">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/50 dark:to-accent-900/50 rounded-xl flex items-center justify-center ring-2 ring-primary-200 dark:ring-primary-800">
+              <Tailwind class="w-10 h-10" />
+            </div>
+            <h3 class="text-center font-bold text-lg text-neutral-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Tailwind CSS</h3>
+            <p class="text-center text-sm text-neutral-700 dark:text-neutral-300 mt-2">Utilidades CSS</p>
           </div>
         </div>
       </div>
