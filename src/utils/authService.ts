@@ -11,6 +11,11 @@ export interface AuthResponse {
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
 
 export function getClientIP(request: Request): string {
+  // Verificar si los headers están disponibles (no en prerender)
+  if (!request.headers) {
+    return '127.0.0.1'; // IP local por defecto para prerender
+  }
+
   const forwarded = request.headers.get('x-forwarded-for');
   if (forwarded) {
     return forwarded.split(',')[0].trim();

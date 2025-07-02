@@ -39,7 +39,13 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
      !url.pathname.includes('.'));
 
   // Skip middleware para páginas estáticas durante prerender
-  if (!isDynamicRoute) {
+  // Incluir específicamente /redes que es pre-renderizada
+  const isPrerenderedPage =
+    url.pathname === '/redes' ||
+    url.pathname === '/' ||
+    url.pathname.startsWith('/blog');
+
+  if (!isDynamicRoute || isPrerenderedPage) {
     return next();
   }
 
@@ -92,7 +98,8 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
   }
 
   // Validar tamaño del request para prevenir memory exhaustion
-  const contentLength = context.request.headers.get('content-length');
+  // Solo si tenemos headers disponibles (no en prerender)
+  const contentLength = context.request.headers?.get('content-length');
   const maxPayload = VERCEL_CONFIG.rateLimits.memory.maxPayloadSize;
   if (contentLength && parseInt(contentLength) > maxPayload) {
     recordRequest(clientIP, true);

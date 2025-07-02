@@ -57,6 +57,11 @@ class VercelOptimizer {
   }
 
   validateRequest(request: Request): ValidationResult {
+    // Verificar si los headers están disponibles (no en prerender)
+    if (!request.headers) {
+      return { valid: true }; // Asumir válido para prerender
+    }
+
     const contentLength = request.headers.get('content-length');
     const maxSize = VERCEL_CONFIG.rateLimits.memory.maxPayloadSize;
 
