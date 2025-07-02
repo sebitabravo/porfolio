@@ -1,0 +1,84 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Mail from "./icons/Mail.astro";
+import X from "./icons/X.astro";
+---
+
+<!-- Header similar to moure.dev structure -->
+<div class="flex-shrink-0 relative z-10">
+  <div class="max-w-2xl mx-auto">
+
+      <!-- Main Header Layout: Image + Info (horizontal like moure.dev) -->
+      <div class="flex items-end gap-6 mb-6">
+
+        <!-- Profile Image Section -->
+        <div class="relative flex-shrink-0">
+          <img
+            src="/ProfileImage.webp"
+            alt="Sebastian Bravo"
+            width="120"
+            height="120"
+            loading="eager"
+            fetchpriority="high"
+            class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-2 border-white/20 shadow-2xl object-cover"
+          />
+          <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
+        </div>
+
+        <!-- Name and Social Info Section -->
+        <div class="flex-1 space-y-2">
+          <h1 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            Sebastian Bravo
+          </h1>
+
+          <p class="text-primary-400 text-base font-medium">
+            @sebitabravo
+          </p>
+
+          <!-- Social Icons Row (horizontal like moure.dev) -->
+          <div class="flex items-center gap-2 pt-1">
+            <a href="https://github.com/sebitabravo" target="_blank" rel="noopener" class="group" aria-label="GitHub">
+              <GitHub class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
+            </a>
+            <a href="https://linkedin.com/in/sebitabravo" target="_blank" rel="noopener" class="group" aria-label="LinkedIn">
+              <Linkedin class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
+            </a>
+            <a href="https://x.com/sebitabravo" target="_blank" rel="noopener" class="group" aria-label="X">
+              <X class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
+            </a>
+            <a href="mailto:sebitabravocontacto@gmail.com" class="group" aria-label="Email">
+              <Mail class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Row (like moure.dev info_text layout) -->
+      <div class="flex items-center justify-between w-full mb-8 px-2">
+        <div class="text-center">
+          <span class="text-primary-400 font-bold text-lg" id="years-experience">3+</span>
+          <span class="text-neutral-400 text-sm block">años de experiencia</span>
+        </div>
+        <div class="w-px h-8 bg-white/20"></div>
+        <div class="text-center">
+          <span class="text-secondary-400 font-bold text-lg" id="github-repos">10+</span>
+          <span class="text-neutral-400 text-sm block">proyectos creados</span>
+        </div>
+        <div class="w-px h-8 bg-white/20"></div>
+        <div class="text-center">
+          <span class="text-accent-400 font-bold text-lg" id="total-followers">1K+</span>
+          <span class="text-neutral-400 text-sm block">seguidores</span>
+        </div>
+      </div>
+
+      <!-- Description and Badge -->
+      <div class="space-y-4 text-center pb-4">
+        <p class="text-neutral-300 text-base leading-relaxed">
+          Soy ingeniero de software freelance fullstack especializado en desarrollo mobile, divulgador y creador de contenido formativo sobre programación.
+          Aquí podrás encontrar todos mis enlaces de interés <span class="text-accent-400">¡Bienvenid@!</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

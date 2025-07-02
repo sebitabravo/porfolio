@@ -1,0 +1,32 @@
+---
+import RedesSection from "./RedesSection.astro";
+import RedesComunidadLinks from "./RedesComunidadLinks.astro";
+import RedesRecursosLinks from "./RedesRecursosLinks.astro";
+import RedesContactoLinks from "./RedesContactoLinks.astro";
+import RedesNewsletterLink from "./RedesNewsletterLink.astro";
+import RedesBackButton from "./RedesBackButton.astro";
+---
+
+<div class="flex-1 relative z-10">
+  <div class="space-y-6">
+
+    <RedesSection title="Comunidad">
+      <RedesComunidadLinks />
+    </RedesSection>
+
+    <RedesSection title="Recursos y más">
+      <RedesRecursosLinks />
+    </RedesSection>
+
+    <RedesSection title="Contacto">
+      <RedesContactoLinks />
+    </RedesSection>
+
+    <RedesSection title="Newsletter">
+      <RedesNewsletterLink />
+    </RedesSection>
+
+    <RedesBackButton />
+
+  </div>
+</div>
