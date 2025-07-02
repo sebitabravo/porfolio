@@ -6,6 +6,6 @@ export interface Props {
 const { class: className = "" } = Astro.props;
 ---
 
-<section class={`container mx-auto px-6 lg:px-8 ${className}`}>
+<section class={`container mx-auto px-6 lg:px-8 relative z-10 ${className}`}>
   <slot />
 </section>
