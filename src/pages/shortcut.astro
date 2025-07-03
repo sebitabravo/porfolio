@@ -8,57 +8,27 @@ import ShortenerScript from "../components/ShortenerScript.astro";
 ---
 
 <Layout title="Acortador de Links - Sebastián Bravo">
-  <main
-    class="relative min-h-screen bg-gradient-to-br from-neutral-900 via-primary-900 to-neutral-900 overflow-hidden"
-  >
-    <!-- Background pattern -->
-    <div
-      class="absolute inset-0"
-      style='background-image: url(&apos;data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.08"%3E%3Ccircle cx="7" cy="7" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&apos;)'
-    >
-    </div>
-
-    <!-- Hero Section -->
-    <section class="relative py-24 text-center">
-      <SectionContainer>
+  <main>
+      <SectionContainer class="relative py-24 text-center">
         <div class="animate-fade-in space-y-8 max-w-4xl mx-auto">
-          <!-- Header -->
           <div class="space-y-6">
             <h1
               class="text-4xl md:text-6xl font-display font-bold bg-gradient-to-r from-white via-primary-200 to-secondary-300 bg-clip-text text-transparent"
             >
               🔗 Acortador de Links
             </h1>
-            <p
-              class="text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed"
-            >
-              Crea enlaces cortos y personalizados para compartir fácilmente tus
-              URLs favoritas
-            </p>
           </div>
         </div>
       </SectionContainer>
-    </section>
 
-    <!-- Main Content Section -->
-    <section
-      class="relative py-12 bg-gradient-to-br from-neutral-50/5 to-primary-50/5"
-    >
-      <SectionContainer>
+      <SectionContainer class="relative py-12 bg-gradient-to-br ">
         <div class="max-w-4xl mx-auto space-y-12">
-          <!-- Formulario para crear link corto -->
           <ShortenForm />
-
-          <!-- Resultados y feedback -->
           <ResultsDisplay />
-
-          <!-- Lista de links creados -->
           <LinksList />
         </div>
       </SectionContainer>
-    </section>
   </main>
 </Layout>
 
-<!-- JavaScript Logic -->
 <ShortenerScript />
