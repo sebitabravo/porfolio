@@ -1,84 +1,95 @@
 ---
 import GitHub from "./icons/GitHub.astro";
 import Linkedin from "./icons/Linkedin.astro";
-import Mail from "./icons/Mail.astro";
 import X from "./icons/X.astro";
+import Check from "./icons/Check.astro";
+import Instagram from "./icons/Instagram.astro";
+import YouTube from "./icons/YouTube.astro";
+import TiktoK from "./icons/TiktoK.astro";
 ---
 
-<!-- Header similar to moure.dev structure -->
-<div class="flex-shrink-0 relative z-10">
-  <div class="max-w-2xl mx-auto">
+<!-- Linktree Style Header with your design -->
+<div class="text-center space-y-6">
+  <!-- Profile Image -->
+  <div class="relative mx-auto w-28 h-28">
+    <img
+      src="/ProfileImage.webp"
+      alt="Sebastian Bravo"
+      width="112"
+      height="112"
+      loading="eager"
+      fetchpriority="high"
+      class="w-28 h-28 rounded-full border-2 border-white/20 shadow-2xl object-cover mx-auto"
+    />
+    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
+    <!-- Verification Badge -->
+    <div class="absolute -top-1 -right-1 w-6 h-6 bg-primary-500 rounded-full border-2 border-white shadow-lg flex items-center justify-center">
+      <Check class="w-3 h-3 text-white" />
+    </div>
+  </div>
 
-      <!-- Main Header Layout: Image + Info (horizontal like moure.dev) -->
-      <div class="flex items-end gap-6 mb-6">
+  <!-- Name and Handle -->
+  <div class="space-y-2">
+    <div class="flex items-center justify-center gap-2">
+      <h1 class="text-3xl font-display font-bold text-white tracking-tight">
+        Sebastian Bravo
+      </h1>
+    </div>
+    <p class="text-primary-400 text-base font-medium">
+      @sebitabravo
+    </p>
+  </div>
 
-        <!-- Profile Image Section -->
-        <div class="relative flex-shrink-0">
-          <img
-            src="/ProfileImage.webp"
-            alt="Sebastian Bravo"
-            width="120"
-            height="120"
-            loading="eager"
-            fetchpriority="high"
-            class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-2 border-white/20 shadow-2xl object-cover"
-          />
-          <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
-        </div>
+  <!-- Enhanced Bio -->
+  <div class="space-y-3">
+    <p class="text-neutral-300 text-sm max-w-sm mx-auto leading-relaxed">
+      🎓 Estudiante de Ingeniería en Informática - Inacap
+      <br />
+      🏆 Técnico en Telecomunicaciones con distinción
+      <br />
+      💻 Desarrollador Full Stack certificado
+      <br />
+      ☕ ¿Charlamos sobre tecnología?
+    </p>
 
-        <!-- Name and Social Info Section -->
-        <div class="flex-1 space-y-2">
-          <h1 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            Sebastian Bravo
-          </h1>
-
-          <p class="text-primary-400 text-base font-medium">
-            @sebitabravo
-          </p>
-
-          <!-- Social Icons Row (horizontal like moure.dev) -->
-          <div class="flex items-center gap-2 pt-1">
-            <a href="https://github.com/sebitabravo" target="_blank" rel="noopener" class="group" aria-label="GitHub">
-              <GitHub class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
-            </a>
-            <a href="https://linkedin.com/in/sebitabravo" target="_blank" rel="noopener" class="group" aria-label="LinkedIn">
-              <Linkedin class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
-            </a>
-            <a href="https://x.com/sebitabravo" target="_blank" rel="noopener" class="group" aria-label="X">
-              <X class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
-            </a>
-            <a href="mailto:sebitabravocontacto@gmail.com" class="group" aria-label="Email">
-              <Mail class="w-6 h-6 text-neutral-400 hover:text-white transition-colors duration-300" />
-            </a>
-          </div>
-        </div>
+    <!-- Stats mini -->
+    <div class="flex justify-center items-center gap-4 text-xs pt-2">
+      <div class="text-center">
+        <span class="text-accent-400 font-bold">3°</span>
+        <span class="text-neutral-500 block">año uni</span>
       </div>
-
-      <!-- Statistics Row (like moure.dev info_text layout) -->
-      <div class="flex items-center justify-between w-full mb-8 px-2">
-        <div class="text-center">
-          <span class="text-primary-400 font-bold text-lg" id="years-experience">3+</span>
-          <span class="text-neutral-400 text-sm block">años de experiencia</span>
-        </div>
-        <div class="w-px h-8 bg-white/20"></div>
-        <div class="text-center">
-          <span class="text-secondary-400 font-bold text-lg" id="github-repos">10+</span>
-          <span class="text-neutral-400 text-sm block">proyectos creados</span>
-        </div>
-        <div class="w-px h-8 bg-white/20"></div>
-        <div class="text-center">
-          <span class="text-accent-400 font-bold text-lg" id="total-followers">1K+</span>
-          <span class="text-neutral-400 text-sm block">seguidores</span>
-        </div>
+      <div class="w-px h-4 bg-white/20"></div>
+      <div class="text-center">
+        <span class="text-secondary-400 font-bold">20+</span>
+        <span class="text-neutral-500 block">proyectos</span>
       </div>
-
-      <!-- Description and Badge -->
-      <div class="space-y-4 text-center pb-4">
-        <p class="text-neutral-300 text-base leading-relaxed">
-          Soy ingeniero de software freelance fullstack especializado en desarrollo mobile, divulgador y creador de contenido formativo sobre programación.
-          Aquí podrás encontrar todos mis enlaces de interés <span class="text-accent-400">¡Bienvenid@!</span>
-        </p>
+      <div class="w-px h-4 bg-white/20"></div>
+      <div class="text-center">
+        <span class="text-accent-400 font-bold">100+</span>
+        <span class="text-neutral-500 block">seguidores</span>
       </div>
     </div>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="flex justify-center items-center gap-3 pt-2">
+    <a href="https://github.com/sebitabravo" target="_blank" rel="noopener" class="group p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110" aria-label="GitHub">
+      <GitHub class="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+    </a>
+    <a href="https://linkedin.com/in/sebitabravo" target="_blank" rel="noopener" class="group p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+      <Linkedin class="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+    </a>
+    <a href="https://x.com/sebitabravo" target="_blank" rel="noopener" class="group p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110" aria-label="X">
+      <X class="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+    </a>
+    <a href="https://instagram.com/sebitabravo" target="_blank" class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110 group" aria-label="Instagram">
+        <Instagram class="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+      </a>
+      <a href="https://tiktok.com/@sebitabravo" target="_blank" class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110 group" aria-label="TikTok">
+        <TiktoK class="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+      </a>
+      <a href="https://youtube.com/@sebitabravo" target="_blank" class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110 group" aria-label="YouTube">
+        <YouTube class="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+      </a>
   </div>
 </div>

@@ -1,32 +1,86 @@
 ---
+import RedesLinkCard from "./RedesLinkCard.astro";
 import RedesSection from "./RedesSection.astro";
-import RedesComunidadLinks from "./RedesComunidadLinks.astro";
-import RedesRecursosLinks from "./RedesRecursosLinks.astro";
-import RedesContactoLinks from "./RedesContactoLinks.astro";
-import RedesNewsletterLink from "./RedesNewsletterLink.astro";
-import RedesBackButton from "./RedesBackButton.astro";
+import Email from "./icons/Email.astro";
+import Book from "./icons/Book.astro";
+import Code from "./icons/Code.astro";
+import Coffee from "./icons/Coffee.astro";
+import Link from "./icons/Link.astro";
 ---
 
-<div class="flex-1 relative z-10">
-  <div class="space-y-6">
+<div class="space-y-6">
 
-    <RedesSection title="Comunidad">
-      <RedesComunidadLinks />
-    </RedesSection>
+  <!-- Content Sections -->
+  <RedesSection title="🎥 Contenido">
+    <div class="space-y-4">
+      <RedesLinkCard
+        href="/"
+        title="Porfolio"
+        description="Proyectos, experiencia y todo sobre mi trabajo"
+        gradient="from-primary-600 via-primary-500 to-primary-700"
+        target="_self"
+      >
+        <Code slot="icon" />
+      </RedesLinkCard>
 
-    <RedesSection title="Recursos y más">
-      <RedesRecursosLinks />
-    </RedesSection>
+      <RedesLinkCard
+        href="/blog"
+        title="Blog Técnico"
+        description="Artículos sobre desarrollo y tecnología"
+        gradient="from-secondary-600 via-secondary-500 to-secondary-700"
+        target="_self"
+      >
+        <Book slot="icon" />
+      </RedesLinkCard>
 
-    <RedesSection title="Contacto">
-      <RedesContactoLinks />
-    </RedesSection>
+      <RedesLinkCard
+        href="/newsletter"
+        title="sebastian bravo.log"
+        description="La newsletter de la comunidad para mantenerse al día"
+        gradient="from-accent-600 via-accent-500 to-accent-700"
+        target="_self"
+      >
+        <Link  slot="icon" />
+      </RedesLinkCard>
 
-    <RedesSection title="Newsletter">
-      <RedesNewsletterLink />
-    </RedesSection>
+    </div>
+  </RedesSection>
 
-    <RedesBackButton />
+  <RedesSection title="📚 Recursos">
+    <div class="space-y-4">
 
-  </div>
+      <RedesLinkCard
+        href="/mi-setup"
+        title="Mi Setup"
+        description="Listado con todos los elementos que uso en mi trabajo"
+        gradient="from-primary-500 via-secondary-500 to-accent-500"
+        target="_self"
+      >
+        <Code slot="icon" />
+      </RedesLinkCard>
+    </div>
+  </RedesSection>
+
+  <RedesSection title="☕ Apoyo">
+    <div class="space-y-4">
+      <RedesLinkCard
+        href="https://buymeacoffee.com/sebitabravo"
+        title="Buy me a coffee ☕"
+        description="Apoya mi trabajo y contenido"
+        gradient="from-accent-600 via-secondary-600 to-primary-600"
+      >
+        <Coffee slot="icon" />
+      </RedesLinkCard>
+
+      <RedesLinkCard
+        href="mailto:sebitabravocontacto@gmail.com"
+        title="Contacto Directo"
+        description="Envíame un mensaje para colaboraciones"
+        gradient="from-secondary-600 via-primary-500 to-accent-500"
+      >
+        <Email slot="icon" />
+      </RedesLinkCard>
+    </div>
+  </RedesSection>
+
 </div>
