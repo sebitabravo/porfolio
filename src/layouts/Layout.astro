@@ -20,18 +20,27 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Mobile optimizations -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Critical styles for mobile first loading */
+      body { margin: 0; background: #171717; color: white; font-family: system-ui, -apple-system, sans-serif; }
+      .preload-hidden { opacity: 0; }
+      .preload-visible { opacity: 1; transition: opacity 0.3s ease; }
+    </style>
 
     <!-- Preload critical resources -->
-    <link
-      rel="preload"
-      href="/ProfileImage.webp"
-      as="image"
-      type="image/webp"
-    />
+    <slot name="head" />
 
     <!-- DNS prefetch for external domains -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />

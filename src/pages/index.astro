@@ -13,15 +13,61 @@ import Certifications from "../components/Certifications.astro";
 ---
 
 <Layout title="Porfolio Sebastian Bravo - Desarrollador Full Stack">
-  <main >
+  <!-- Critical resource preloading for mobile -->
+  <link slot="head" rel="preload" href="/ProfileImage.webp" as="image" fetchpriority="high">
+  <link slot="head" rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <main>
     <SectionContainer>
       <Hero />
-      <Project />
-      <AboutMe />
-      <Education />
-      <Certifications />
-      <Experience />
-      <Languages />
+
+      <!-- Above the fold content -->
+      <div id="main-content">
+        <Project />
+        <AboutMe />
+      </div>
+
+      <!-- Below the fold - lazy loaded -->
+      <div id="secondary-content" style="opacity: 0;">
+        <Education />
+        <Certifications />
+        <Experience />
+        <Languages />
+      </div>
     </SectionContainer>
   </main>
+
+  <script>
+    // Progressive loading for mobile performance
+    document.addEventListener('DOMContentLoaded', () => {
+      // Intersection Observer for lazy loading below-the-fold content
+      const secondaryContent = document.getElementById('secondary-content');
+
+      if (secondaryContent && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const element = entry.target as HTMLElement;
+              element.style.opacity = '1';
+              element.style.transition = 'opacity 0.5s ease-in-out';
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          rootMargin: '100px'
+        });
+
+        observer.observe(secondaryContent);
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        setTimeout(() => {
+          if (secondaryContent) {
+            secondaryContent.style.opacity = '1';
+            secondaryContent.style.transition = 'opacity 0.5s ease-in-out';
+          }
+        }, 1000);
+      }
+    });
+  </script>
 </Layout>

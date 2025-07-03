@@ -9,8 +9,12 @@ import RedesStats from "../components/RedesStats.astro";
 ---
 
 <Layout title="Redes - Sebastian Bravo">
+  <!-- Preload critical resources -->
+  <link slot="head" rel="preload" href="/ProfileImage.webp" as="image" fetchpriority="high">
+  <link slot="head" rel="dns-prefetch" href="https://fonts.googleapis.com">
+
   <main class="relative min-h-screen bg-gradient-to-br from-neutral-900 via-primary-900 to-neutral-900">
-    <SectionContainer class="relative bg-gradient-to-br from-neutral-900/95 via-primary-900/95 to-neutral-900/95 min-h-screen flex flex-col items-center justify-start px-4 py-8">
+    <SectionContainer class="relative min-h-screen flex flex-col items-center justify-start px-4 py-8">
       <div class="w-full max-w-lg mx-auto space-y-6">
         <RedesHeader />
         <RedesMainContent />
@@ -18,5 +22,22 @@ import RedesStats from "../components/RedesStats.astro";
     </SectionContainer>
   </main>
 
-  <RedesStats />
+  <!-- Load RedesStats with lower priority -->
+  <div id="stats-container">
+    <RedesStats />
+  </div>
+
+  <script>
+    // Lazy load stats after main content
+    document.addEventListener('DOMContentLoaded', () => {
+      const statsContainer = document.getElementById('stats-container');
+      if (statsContainer) {
+        statsContainer.style.opacity = '0';
+        setTimeout(() => {
+          statsContainer.style.opacity = '1';
+          statsContainer.style.transition = 'opacity 0.3s ease-in-out';
+        }, 100);
+      }
+    });
+  </script>
 </Layout>
