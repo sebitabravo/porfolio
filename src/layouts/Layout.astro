@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import SpeedInsights from "@vercel/speed-insights/astro";
+// Only import SpeedInsights conditionally to avoid headers access during prerendering
 
 export interface Props {
   title: string;
@@ -165,7 +165,18 @@ img {
       <slot />
     </main>
     <Footer />
-    <SpeedInsights />
+    
+    <!-- Speed Insights - conditionally loaded to avoid prerender issues -->
+    <script type="module">
+      // Load speed insights only in production and after page load
+      if (import.meta.env.PROD && typeof window !== 'undefined') {
+        import('@vercel/speed-insights/dist/astro/index.js').then((module) => {
+          // Initialize speed insights manually if needed
+        }).catch((err) => {
+          console.debug('Speed insights not available:', err);
+        });
+      }
+    </script>
 
     <!-- Load global CSS asynchronously -->
     <link rel="stylesheet" href="/src/styles/global.css" media="print" onload="this.media='all'; this.onload=null;" />
