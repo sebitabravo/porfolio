@@ -8,7 +8,14 @@ import ShortenerScript from "../components/ShortenerScript.astro";
 ---
 
 <Layout title="Acortador de Links - Sebastián Bravo">
-  <main>
+  <!-- Preload critical resources for this page -->
+  <link slot="head" rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- SEO and performance meta -->
+  <meta slot="head" name="description" content="Herramienta para acortar URLs de forma rápida y segura - Sebastian Bravo">
+  <meta slot="head" name="keywords" content="acortador de enlaces, URL shortener, Sebastian Bravo">
+
+  <main role="main">
       <SectionContainer class="relative py-24 text-center">
         <div class="animate-fade-in space-y-8 max-w-4xl mx-auto">
           <div class="space-y-6">

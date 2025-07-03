@@ -9,30 +9,52 @@ import RedesMainContent from "../components/RedesMainContent.astro";
 
 <Layout title="Redes - Sebastian Bravo">
   <!-- Preload critical resources -->
-  <link slot="head" rel="preload" href="/ProfileImage.webp" as="image" fetchpriority="high">
+  <link slot="head" rel="preload" href="/ProfileImage.webp" as="image" fetchpriority="high" media="(max-width: 768px)">
   <link slot="head" rel="dns-prefetch" href="https://fonts.googleapis.com">
 
-  <main class="relative min-h-screen bg-gradient-to-br from-neutral-900 via-primary-900 to-neutral-900">
+  <!-- Optimized image preloading with responsive considerations -->
+  <link slot="head" rel="preload" as="image" href="/ProfileImage.webp" imagesrcset="/ProfileImage.webp 320w" imagesizes="(max-width: 768px) 280px, 320px">
+
+  <!-- SEO and Accessibility meta -->
+  <meta slot="head" name="description" content="Enlaces a las redes sociales y contenido de Sebastian Bravo - Desarrollador Full Stack">
+  <meta slot="head" name="keywords" content="Sebastian Bravo, desarrollador, redes sociales, portfolio, blog técnico">
+
+  <main class="relative min-h-screen bg-gradient-to-br from-neutral-900 via-primary-900 to-neutral-900" role="main">
     <SectionContainer class="relative min-h-screen flex flex-col items-center justify-start px-4 py-8">
       <div class="w-full max-w-lg mx-auto space-y-6">
-        <RedesHeader />
-        <RedesMainContent />
+        <header>
+          <RedesHeader />
+        </header>
+        <section aria-label="Enlaces y contenido">
+          <RedesMainContent />
+        </section>
       </div>
     </SectionContainer>
   </main>
 
   <script>
-    // Lazy load main content optimization
-    document.addEventListener('DOMContentLoaded', () => {
-      // Simple fade-in effect for better UX
+    // Optimized content loading with minimal layout shift
+    const optimizePageLoad = () => {
       const mainContent = document.querySelector('main');
       if (mainContent) {
+        // Use transform instead of opacity for better performance
+        mainContent.style.transform = 'translateY(10px)';
         mainContent.style.opacity = '0';
-        setTimeout(() => {
+
+        // Use requestAnimationFrame for smoother animation
+        requestAnimationFrame(() => {
+          mainContent.style.transform = 'translateY(0)';
           mainContent.style.opacity = '1';
-          mainContent.style.transition = 'opacity 0.3s ease-in-out';
-        }, 50);
+          mainContent.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
       }
-    });
+    };
+
+    // Execute immediately if DOM is ready, otherwise wait
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', optimizePageLoad, { once: true });
+    } else {
+      optimizePageLoad();
+    }
   </script>
 </Layout>

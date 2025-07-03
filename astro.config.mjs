@@ -1,33 +1,44 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-import vercel from '@astrojs/vercel';
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sebita.dev/',
+  site: "https://sebita.dev/",
   vite: {
     plugins: [tailwindcss()],
     build: {
-      cssCodeSplit: false, // Optimize CSS loading
+      cssCodeSplit: true, // Cambiado para mejor performance
       rollupOptions: {
         output: {
           // Optimize chunk splitting for better caching
           manualChunks: {
-            vendor: ['astro'],
-          }
-        }
-      }
-    }
+            vendor: ["astro"],
+          },
+          assetFileNames: (assetInfo) => {
+            // Better asset naming for caching
+            const name = assetInfo.name || "asset";
+            const info = name.split(".");
+            const ext = info[info.length - 1];
+            if (/\.(css)$/.test(name)) {
+              return `assets/css/[name]-[hash].${ext}`;
+            }
+            return `assets/[name]-[hash].${ext}`;
+          },
+        },
+      },
+    },
   },
-  output: 'server',
+  output: "server",
   compressHTML: true,
   build: {
-    inlineStylesheets: 'auto', // Inline critical CSS
+    inlineStylesheets: "always", // Inline critical CSS más agresivamente
+    assets: "_astro",
   },
   adapter: vercel({
     webAnalytics: {
-      enabled: true
+      enabled: true, // Habilitado con CSP mejorada
     },
     imageService: true,
     imagesConfig: {
