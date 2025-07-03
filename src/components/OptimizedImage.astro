@@ -1,0 +1,109 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  priority?: boolean;
+  loading?: 'lazy' | 'eager';
+  fetchPriority?: 'high' | 'low' | 'auto';
+  class?: string;
+  sizes?: string;
+  aspectRatio?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  priority = false,
+  loading = 'lazy',
+  fetchPriority = 'auto',
+  class: className = '',
+  sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',
+  aspectRatio = 'auto',
+} = Astro.props;
+
+// Generar srcset para imágenes responsivas
+const generateSrcSet = (baseSrc: string) => {
+  const formats = ['webp', 'avif'];
+  const sizes = [320, 640, 768, 1024, 1280, 1920];
+  
+  // Para este ejemplo, asumimos que las imágenes están optimizadas
+  // En un proyecto real, usarías un servicio de optimización de imágenes
+  return sizes.map(size => `${baseSrc}?w=${size} ${size}w`).join(', ');
+};
+
+const optimizedSrc = priority ? src : src;
+const srcSet = generateSrcSet(src);
+---
+
+<picture class={`optimized-image ${className}`}>
+  <!-- AVIF para navegadores compatibles -->
+  {src.endsWith('.webp') && (
+    <source 
+      srcset={src.replace('.webp', '.avif')}
+      type="image/avif"
+      sizes={sizes}
+    />
+  )}
+  
+  <!-- WebP para navegadores compatibles -->
+  {!src.endsWith('.webp') && (
+    <source 
+      srcset={src.replace(/\.(jpg|jpeg|png)$/, '.webp')}
+      type="image/webp"
+      sizes={sizes}
+    />
+  )}
+  
+  <!-- Imagen fallback -->
+  <img 
+    src={optimizedSrc}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={priority ? 'eager' : loading}
+    fetchpriority={priority ? 'high' : fetchPriority}
+    decoding="async"
+    sizes={sizes}
+    srcset={srcSet}
+    style={`aspect-ratio: ${aspectRatio}; max-width: 100%; height: auto;`}
+    class={`preload-hidden ${priority ? 'priority-image' : ''}`}
+    data-src={src}
+  />
+</picture>
+
+<style>
+  .optimized-image {
+    display: block;
+    overflow: hidden;
+  }
+  
+  .optimized-image img {
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
+  }
+  
+  .priority-image {
+    opacity: 1 !important;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .optimized-image img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // Optimización específica para imágenes críticas
+  document.addEventListener('DOMContentLoaded', () => {
+    const priorityImages = document.querySelectorAll('.priority-image');
+    priorityImages.forEach((img) => {
+      img.classList.remove('preload-hidden');
+      img.classList.add('preload-visible');
+    });
+  });
+</script>
