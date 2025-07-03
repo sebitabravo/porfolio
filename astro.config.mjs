@@ -7,6 +7,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://sebita.dev/',
   vite: {
+    // @ts-ignore
     plugins: [tailwindcss()],
     build: {
       cssCodeSplit: false, // Optimize CSS loading
