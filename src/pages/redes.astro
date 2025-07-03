@@ -5,7 +5,6 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import RedesHeader from "../components/RedesHeader.astro";
 import RedesMainContent from "../components/RedesMainContent.astro";
-import RedesStats from "../components/RedesStats.astro";
 ---
 
 <Layout title="Redes - Sebastian Bravo">
@@ -22,21 +21,17 @@ import RedesStats from "../components/RedesStats.astro";
     </SectionContainer>
   </main>
 
-  <!-- Load RedesStats with lower priority -->
-  <div id="stats-container">
-    <RedesStats />
-  </div>
-
   <script>
-    // Lazy load stats after main content
+    // Lazy load main content optimization
     document.addEventListener('DOMContentLoaded', () => {
-      const statsContainer = document.getElementById('stats-container');
-      if (statsContainer) {
-        statsContainer.style.opacity = '0';
+      // Simple fade-in effect for better UX
+      const mainContent = document.querySelector('main');
+      if (mainContent) {
+        mainContent.style.opacity = '0';
         setTimeout(() => {
-          statsContainer.style.opacity = '1';
-          statsContainer.style.transition = 'opacity 0.3s ease-in-out';
-        }, 100);
+          mainContent.style.opacity = '1';
+          mainContent.style.transition = 'opacity 0.3s ease-in-out';
+        }, 50);
       }
     });
   </script>
