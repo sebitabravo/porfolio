@@ -1,6 +1,6 @@
 {
-    "buildCommand": "bun run build",
-    "installCommand": "bun install",
+    "buildCommand": "npm run build",
+    "installCommand": "npm install",
     "framework": "astro",
     "headers": [
         {
@@ -17,71 +17,11 @@
                 {
                     "key": "Referrer-Policy",
                     "value": "strict-origin-when-cross-origin"
-                },
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                },
-                {
-                    "key": "X-DNS-Prefetch-Control",
-                    "value": "on"
-                },
-                {
-                    "key": "Strict-Transport-Security",
-                    "value": "max-age=31536000; includeSubDomains"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                },
-                {
-                    "key": "Content-Security-Policy",
-                    "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vercel.live https://*.vercel-insights.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://vitals.vercel-insights.com https://*.vercel-insights.com https://static.cloudflareinsights.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';"
                 }
             ]
         },
         {
-            "source": "/api/(.*)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "no-store, no-cache, must-revalidate"
-                }
-            ]
-        },
-        {
-            "source": "**/speed-insights/**",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=86400, must-revalidate"
-                }
-            ]
-        },
-        {
-            "source": "**/insights/**",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=86400, must-revalidate"
-                }
-            ]
-        },
-        {
-            "source": "/(_astro|static)/(.*)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                },
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                }
-            ]
-        },
-        {
-            "source": "/:path*.:ext(js|css|woff2|woff|png|jpg|jpeg|svg|webp|ico)",
+            "source": "/_astro/(.*)",
             "headers": [
                 {
                     "key": "Cache-Control",
@@ -90,39 +30,18 @@
             ]
         },
         {
-            "source": "/:path*.html",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=3600, must-revalidate"
-                }
-            ]
-        },
-        {
-            "source": "/:path*.:ext(webp|avif|png|jpg|jpeg)",
+            "source": "/:path*.:ext(js|css|woff2|woff|png|jpg|jpeg|svg|webp|ico|avif)",
             "headers": [
                 {
                     "key": "Cache-Control",
                     "value": "public, max-age=31536000, immutable"
-                },
-                {
-                    "key": "Vary",
-                    "value": "Accept"
-                }
-            ]
-        },
-        {
-            "source": "/ProfileImage.webp",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=604800, must-revalidate"
-                },
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
                 }
             ]
         }
-    ]
+    ],
+    "functions": {
+        "src/pages/api/*.ts": {
+            "maxDuration": 10
+        }
+    }
 }

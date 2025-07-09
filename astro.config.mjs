@@ -9,23 +9,20 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     build: {
-      cssCodeSplit: true, // Cambiado para mejor performance
+      cssCodeSplit: true,
       rollupOptions: {
         output: {
           // Optimize chunk splitting for better caching
           manualChunks: {
             vendor: ["astro"],
           },
-          assetFileNames: (assetInfo) => {
-            // Better asset naming for caching
-            const name = assetInfo.name || "asset";
-            const info = name.split(".");
-            const ext = info[info.length - 1];
-            if (/\.(css)$/.test(name)) {
-              return `assets/css/[name]-[hash].${ext}`;
-            }
-            return `assets/[name]-[hash].${ext}`;
-          },
+        },
+      },
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
         },
       },
     },
@@ -33,21 +30,30 @@ export default defineConfig({
   output: "server",
   compressHTML: true,
   build: {
-    inlineStylesheets: "always", // Inline critical CSS más agresivamente
+    inlineStylesheets: "always",
     assets: "_astro",
   },
   adapter: vercel({
     webAnalytics: {
-      enabled: true, // Habilitado con CSP mejorada
+      enabled: true,
+    },
+    speedInsights: {
+      enabled: true,
     },
     imageService: true,
     imagesConfig: {
-      sizes: [320, 640, 1280],
+      sizes: [320, 640, 768, 1024, 1280, 1920],
+      formats: ['webp', 'avif'],
       domains: [],
     },
     isr: {
-      // Enable ISR for better performance
       expiration: 60 * 60 * 24, // 24 hours
     },
+    edgeMiddleware: false,
+    functionPerRoute: false,
   }),
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
 });

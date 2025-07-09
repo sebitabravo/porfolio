@@ -1,0 +1,141 @@
+---
+export interface Props {
+  threshold?: number;
+  rootMargin?: string;
+  class?: string;
+}
+
+const {
+  threshold = 0.1,
+  rootMargin = '50px 0px',
+  class: className = '',
+} = Astro.props;
+---
+
+<div 
+  class={`lazy-loader ${className}`}
+  data-threshold={threshold}
+  data-root-margin={rootMargin}
+>
+  <div class="lazy-content preload-hidden">
+    <slot />
+  </div>
+  <div class="lazy-placeholder">
+    <div class="loading-skeleton" style="height: 200px; border-radius: 8px;"></div>
+  </div>
+</div>
+
+<style>
+  .lazy-loader {
+    position: relative;
+    min-height: 100px;
+  }
+
+  .lazy-content {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .lazy-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lazy-content.preload-visible + .lazy-placeholder {
+    display: none;
+  }
+
+  .loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  .dark .loading-skeleton {
+    background: linear-gradient(90deg, #262626 25%, #404040 50%, #262626 75%);
+    background-size: 200% 100%;
+  }
+
+  @keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loading-skeleton {
+      animation: none;
+      background: #e0e0e0;
+    }
+    
+    .dark .loading-skeleton {
+      background: #404040;
+    }
+    
+    .lazy-content {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  class LazyLoader {
+    private observer: IntersectionObserver;
+
+    constructor() {
+      this.observer = new IntersectionObserver(
+        this.handleIntersection.bind(this),
+        {
+          threshold: 0.1,
+          rootMargin: '50px 0px'
+        }
+      );
+
+      this.init();
+    }
+
+    private init() {
+      const lazyElements = document.querySelectorAll('.lazy-loader');
+      lazyElements.forEach(element => {
+        const threshold = parseFloat(element.getAttribute('data-threshold') || '0.1');
+        const rootMargin = element.getAttribute('data-root-margin') || '50px 0px';
+        
+        // Create a new observer for each element with its specific settings
+        const observer = new IntersectionObserver(
+          this.handleIntersection.bind(this),
+          { threshold, rootMargin }
+        );
+        
+        observer.observe(element);
+      });
+    }
+
+    private handleIntersection(entries: IntersectionObserverEntry[]) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const lazyContent = entry.target.querySelector('.lazy-content');
+          if (lazyContent) {
+            lazyContent.classList.remove('preload-hidden');
+            lazyContent.classList.add('preload-visible');
+            
+            // Dispatch custom event for additional loading logic
+            entry.target.dispatchEvent(new CustomEvent('lazy-loaded'));
+          }
+          
+          this.observer.unobserve(entry.target);
+        }
+      });
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new LazyLoader());
+  } else {
+    new LazyLoader();
+  }
+</script>
